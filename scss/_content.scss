@@ -40,7 +40,7 @@
   	vertical-align: top;
 	border: rgb(253, 187, 87) 2px solid;
 }
-.imgProd, .descPro, .cajaProductos, .coloresProd{
+.imgProd, .descProuctos, .cajaProductos, .coloresProd{
 	width: 100%;
 }
 .iProducto{
@@ -62,6 +62,13 @@
 .cajaProductos__text--grey{
 	@include text-info;
 	color: #3D3C3C;
+}
+
+.precios-outlet{
+	@include text-info;
+	color: #3D3C3C;
+	text-align: center;
+	font-size: $fb;
 }
 form{
 margin:auto;

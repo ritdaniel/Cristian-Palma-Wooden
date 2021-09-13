@@ -197,7 +197,7 @@ body {
   vertical-align: top;
   border: #fdbb57 2px solid; }
 
-.imgProd, .descPro, .cajaProductos, .coloresProd {
+.imgProd, .descProuctos, .cajaProductos, .coloresProd {
   width: 100%; }
 
 .iProducto {
@@ -221,6 +221,13 @@ body {
   font-size: 1.2rem;
   text-align: center;
   color: #3D3C3C; }
+
+.precios-outlet {
+  font-size: 1.2rem;
+  text-align: center;
+  color: #3D3C3C;
+  text-align: center;
+  font-size: 1.5rem; }
 
 form {
   margin: auto;
