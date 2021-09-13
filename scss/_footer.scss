@@ -1,0 +1,46 @@
+.footer{
+
+	background-color:$cfooter;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-top: 10px;
+}
+
+.footer-links a{
+	display:inline-block;
+	line-height: 1.8;
+	font-weight:$fsuave;
+	text-decoration: none;
+	color:  inherit;
+	text-align: center;
+  }
+.img-footer{
+	width: 40%;
+	opacity:0.8;
+	margin: 1% 30%;
+}
+.icono{
+	width:8%;
+	margin-right: 7px;
+	
+}
+.foter__title--grey{
+	color: $cfontfooter;
+	font-size:$fn;
+}
+
+.footer-left, .footer-right{
+	margin-top: 5px;
+	width: 95%;
+	display: inline-block;
+  	vertical-align: top;
+  }
+.footer-left{
+	text-align: center;
+}
+.footer-right a{
+text-decoration: none;
+color: black;
+font-weight: bold;
+  }

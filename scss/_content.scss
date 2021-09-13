@@ -1,0 +1,73 @@
+@mixin title-text {
+  font-size: $fb;
+  font-weight: bold;
+  text-align: center;
+}
+
+@mixin text-info {
+  font-size: $fn;
+  text-align: center;
+}
+.rrss{
+	margin-top: 2px;
+}
+.rrss__img--sm{
+	width: 2em;
+	float:right;
+}
+.datos{ 
+	grid-area: datos;
+	display: flex;
+	flex-direction: column;
+}
+.datos__title--tprincipal{
+	@include title-text;
+	margin: 2px 0px;
+	color: $ctitulo;
+}
+.nosotros{
+	text-align:center;
+	margin-top: 5px;
+}
+.nosotros__text--contenido{
+	@include text-info;
+	margin: 5px;
+	color: #4E4C4C;
+}
+.productos{
+	width: 95%;
+	display: inline-block;
+  	vertical-align: top;
+	border: rgb(253, 187, 87) 2px solid;
+}
+.imgProd, .descPro, .cajaProductos, .coloresProd{
+	width: 100%;
+}
+.iProducto{
+
+	width: 97%;
+	border-radius: 15px;
+    margin: 5px;
+}
+.cajaProductos{
+	background-color:$cfooter;
+	margin: 5px 15px;
+}
+.cajaProductos__title--orange{
+	@include title-text;
+	color: $ctcaja;
+	background-color:#BFBCBC;
+	padding: $pstandar 10%;
+}
+.cajaProductos__text--grey{
+	@include text-info;
+	color: #3D3C3C;
+}
+form{
+margin:auto;
+justify-content: center;
+}
+.formulario__fieldset--bgtransp{
+background-color:$cfooter;
+padding: $pdoble;
+}
