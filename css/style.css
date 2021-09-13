@@ -351,6 +351,10 @@ form {
   .productos {
     width: 100%;
     display: inline-flex; }
+  .imgProd {
+    width: 35%; }
+  .coloresProd {
+    width: 25%; }
   .footer-left {
     width: 50%;
     text-align: start; }
