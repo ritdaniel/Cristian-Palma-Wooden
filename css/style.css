@@ -128,8 +128,8 @@ body {
     font-size: 1.2rem;
     margin-left: 10px; }
   .navbar ul li a:hover {
-    transform: scale(1, 0.5);
-    transition: 0.3s;
+    transform: scale(1.2);
+    transition: 0.5s;
     color: #141414;
     font-size: 1.2rem; }
 
@@ -138,24 +138,26 @@ body {
 
 .menuLateral {
   grid-area: menuLateral;
-  background: linear-gradient(to bottom, rgba(117, 117, 112, 0.863), rgba(226, 226, 220, 0.7));
   border-top: 2px;
   margin-top: 2px; }
   .menuLateral nav {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; }
+    justify-content: flex-start;
+    background: linear-gradient(to bottom, rgba(117, 117, 112, 0.863), rgba(226, 226, 220, 0.7)); }
     .menuLateral nav ul {
       list-style-type: none;
-      overflow: hidden; }
+      overflow: hidden;
+      padding-left: 0; }
       .menuLateral nav ul li {
-        list-style-type: none; }
+        list-style-type: none;
+        border: #f7a03c 1px solid; }
         .menuLateral nav ul li a {
           font-size: 1rem;
           display: block;
           color: #111110;
           text-align: center;
-          padding: 5px;
+          padding: 5px 0;
           text-decoration: none; }
         .menuLateral nav ul li a:hover:not(.actual) {
           transform: scale(1.2);
@@ -355,6 +357,10 @@ form {
   .productos {
     width: 100%;
     display: inline-flex; }
+  .imgProd {
+    width: 35%; }
+  .coloresProd {
+    width: 25%; }
   .footer-left {
     width: 50%;
     text-align: start; }

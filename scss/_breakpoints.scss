@@ -31,7 +31,6 @@
 	font-size: 1.2rem;
 }
 .footer{
-
 	background-color:$cfooter;
 	display: flex;
 	flex-direction: rows;
@@ -108,6 +107,13 @@
 		width: 100%;
 		display: inline-flex;
 		}
+	.imgProd{
+		width: 35%;
+	}	
+	
+	.coloresProd{
+		width: 25%;
+	}
 	.footer-left{ 
 		width: 50%;
 		text-align: start;
