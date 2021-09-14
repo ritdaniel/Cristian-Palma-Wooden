@@ -206,7 +206,7 @@ body {
   margin: 7px; }
 
 .cajaProductos {
-  background-color: black;
+  background-color: rgba(248, 244, 241, 0.466);
   margin: 5px 15px; }
 
 .cajaProductos__title--orange {
