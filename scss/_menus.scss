@@ -9,8 +9,8 @@
 				margin-left: 10px;
 			}
 			a:hover{
-				transform: scale(1.1);	
-				transition: 0.5s;
+				transform: scale(1, 0.5);	
+				transition: 0.3s;
 				color: rgb(20, 20, 20);
 				font-size: $fn;					
 			}

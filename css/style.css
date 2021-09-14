@@ -128,8 +128,8 @@ body {
     font-size: 1.2rem;
     margin-left: 10px; }
   .navbar ul li a:hover {
-    transform: scale(1.1);
-    transition: 0.5s;
+    transform: scale(1, 0.5);
+    transition: 0.3s;
     color: #141414;
     font-size: 1.2rem; }
 
@@ -167,7 +167,11 @@ body {
 
 .rrss__img--sm {
   width: 2em;
-  float: right; }
+  float: right;
+  padding: 0 2px; }
+
+.tit {
+  float: inherit; }
 
 .datos {
   grid-area: datos;
@@ -351,10 +355,6 @@ form {
   .productos {
     width: 100%;
     display: inline-flex; }
-  .imgProd {
-    width: 35%; }
-  .coloresProd {
-    width: 25%; }
   .footer-left {
     width: 50%;
     text-align: start; }
