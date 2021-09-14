@@ -18,7 +18,7 @@
 .datos{ 
 	grid-area: datos;
 	display: flex;
-	flex-direction: column;
+	flex-direction: column;	
 }
 .datos__title--tprincipal{
 	@include title-text;
@@ -35,22 +35,23 @@
 	color: #4E4C4C;
 }
 .productos{
-	width: 95%;
+	width: 99%;
 	display: inline-block;
   	vertical-align: top;
 	border: rgb(253, 187, 87) 2px solid;
 }
-.imgProd, .descProuctos, .cajaProductos, .coloresProd{
+.imgProd, .descProuctos, .coloresProd{
 	width: 100%;
 }
 .iProducto{
 
-	width: 97%;
+	width: 98%;
 	border-radius: 15px;
-    margin: 5px;
+    margin: 7px;
 }
 .cajaProductos{
-	background-color:$cfooter;
+	//background-color:$cfooter;
+	background-color:black;
 	margin: 5px 15px;
 }
 .cajaProductos__title--orange{

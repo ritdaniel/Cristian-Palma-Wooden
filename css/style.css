@@ -192,21 +192,21 @@ body {
   color: #4E4C4C; }
 
 .productos {
-  width: 95%;
+  width: 99%;
   display: inline-block;
   vertical-align: top;
   border: #fdbb57 2px solid; }
 
-.imgProd, .descProuctos, .cajaProductos, .coloresProd {
+.imgProd, .descProuctos, .coloresProd {
   width: 100%; }
 
 .iProducto {
-  width: 97%;
+  width: 98%;
   border-radius: 15px;
-  margin: 5px; }
+  margin: 7px; }
 
 .cajaProductos {
-  background-color: rgba(248, 244, 241, 0.466);
+  background-color: black;
   margin: 5px 15px; }
 
 .cajaProductos__title--orange {
