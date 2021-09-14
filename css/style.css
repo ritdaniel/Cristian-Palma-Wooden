@@ -106,7 +106,7 @@ body {
 .contenedorProductos {
   display: grid;
   grid-template-columns: repeat(1, 4fr);
-  grid-template-rows: 0.4fr 0.2fr 5.5fr  0.2fr;
+  grid-template-rows: 0.2fr 0.2fr 5.5fr  0.4fr;
   grid-template-areas: "cabecera" "menuLateral" "datos" "pie"; }
 
 .cabecera {
@@ -140,7 +140,7 @@ body {
   grid-area: menuLateral;
   background: linear-gradient(to bottom, rgba(117, 117, 112, 0.863), rgba(226, 226, 220, 0.7));
   border-top: 2px;
-  margin-top: 2%; }
+  margin-top: 2px; }
   .menuLateral nav {
     display: flex;
     flex-direction: column;
