@@ -138,24 +138,26 @@ body {
 
 .menuLateral {
   grid-area: menuLateral;
-  background: linear-gradient(to bottom, rgba(117, 117, 112, 0.863), rgba(226, 226, 220, 0.7));
   border-top: 2px;
   margin-top: 2px; }
   .menuLateral nav {
+    background: linear-gradient(to bottom, rgba(117, 117, 112, 0.863), rgba(226, 226, 220, 0.7));
     display: flex;
     flex-direction: column;
     justify-content: flex-start; }
     .menuLateral nav ul {
       list-style-type: none;
-      overflow: hidden; }
+      overflow: hidden;
+      padding-left: 0; }
       .menuLateral nav ul li {
-        list-style-type: none; }
+        list-style-type: none;
+        border: #fd5d13 2px solid; }
         .menuLateral nav ul li a {
           font-size: 1rem;
           display: block;
           color: #111110;
           text-align: center;
-          padding: 5px;
+          padding-top: 5px;
           text-decoration: none; }
         .menuLateral nav ul li a:hover:not(.actual) {
           transform: scale(1.2);
@@ -199,7 +201,7 @@ body {
   width: 99%;
   display: inline-block;
   vertical-align: top;
-  border: #fdbb57 2px solid; }
+  border: #fd5d13 2px solid; }
 
 .imgProd, .descProuctos, .coloresProd {
   width: 100%; }
