@@ -8,6 +8,9 @@
 .text-black-100 {
   font-weight: bold; }
 
+h1, h2, h3, h4, a, li {
+  font-family: "Barlow Semi Condensed"; }
+
 .ptext-1 {
   padding: 1px; }
 
@@ -121,10 +124,12 @@ body {
 .text-black-100 {
   font-weight: bold; }
 
+h1, h2, h3, h4, a, li {
+  font-family: "Barlow Semi Condensed"; }
+
 .navbar {
   background: linear-gradient(to bottom, #ff6600, rgba(224, 158, 34, 0.808)); }
   .navbar ul li a {
-    font-family: 'Barlow Semi Condensed';
     color: #141414;
     font-size: 1.2rem;
     margin-left: 10px; }
