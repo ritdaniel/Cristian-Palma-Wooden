@@ -166,15 +166,20 @@ body {
           color: #e44607; }
 
 .rrss {
-  margin-top: 1px; }
+  margin-top: -1px; }
 
 .rrss__img--sm {
   width: 2em;
   float: right;
-  padding: 0 2px; }
+  padding: 6px 2px;
+  margin-right: 5px; }
 
 .tit {
-  float: inherit; }
+  float: inherit;
+  color: #ff6600;
+  background-color: #f8f6f1;
+  padding: 5px 10%;
+  border: #3D3C3C 2px solid; }
 
 .datos {
   grid-area: datos;
