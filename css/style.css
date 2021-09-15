@@ -152,21 +152,13 @@ body {
       padding-left: 0; }
       .menuLateral nav ul li {
         list-style-type: none;
-<<<<<<< HEAD
-        border: #f7a03c 1px solid; }
-=======
         border: #fd5d13 2px solid; }
->>>>>>> productos
         .menuLateral nav ul li a {
           font-size: 1rem;
           display: block;
           color: #111110;
           text-align: center;
-<<<<<<< HEAD
           padding: 5px 0;
-=======
-          padding-top: 5px;
->>>>>>> productos
           text-decoration: none; }
         .menuLateral nav ul li a:hover:not(.actual) {
           transform: scale(1.2);
