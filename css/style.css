@@ -323,6 +323,12 @@ form {
     color: black;
     text-decoration-style: solid;
     font-size: 1.2rem; }
+  .imgProd {
+    width: 50%; }
+  div.productos {
+    width: 50;
+    display: flex;
+    flex-direction: rows; }
   .footer {
     background-color: rgba(248, 244, 241, 0.466);
     display: flex;

@@ -30,6 +30,13 @@
 	text-decoration-style:solid;
 	font-size: 1.2rem;
 }
+.imgProd{
+	width: 50%;}
+div.productos{
+	width: 50;
+	display: flex;
+	flex-direction: rows;
+}
 .footer{
 	background-color:$cfooter;
 	display: flex;
@@ -82,6 +89,7 @@
 		"pie pie pie";
 
 	}
+		
 	.dropdownli a:hover{
 		background-color: #f7d265;
 	}
