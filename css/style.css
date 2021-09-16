@@ -171,6 +171,10 @@ h1, h2, h3, h4, a, li {
           transition: 0.5s;
           color: #e44607; }
 
+.text-black-100 {
+  background-color: #f8f6f1;
+  display: inline-block; }
+
 .rrss {
   margin-top: -1px; }
 
@@ -188,7 +192,7 @@ h1, h2, h3, h4, a, li {
 
 .tit {
   float: inherit;
-  color: #ff6600;
+  color: #df861d;
   background-color: #f8f6f1;
   padding: 5px 10%;
   border: #3D3C3C 2px solid; }
@@ -208,6 +212,8 @@ h1, h2, h3, h4, a, li {
 .nosotros {
   text-align: center;
   margin-top: 5px; }
+  .nosotros img {
+    width: 90%; }
 
 .nosotros__text--contenido {
   font-size: 1.2rem;
@@ -219,7 +225,7 @@ h1, h2, h3, h4, a, li {
   width: 99%;
   display: inline-block;
   vertical-align: top;
-  border: #fd5d13 2px solid; }
+  border: #ffb347 2px solid; }
 
 .imgProd, .descProuctos, .coloresProd {
   width: 100%; }
@@ -237,14 +243,15 @@ h1, h2, h3, h4, a, li {
   font-size: 1.5rem;
   font-weight: bold;
   text-align: center;
-  color: #ff6600;
-  background-color: #BFBCBC;
+  color: #df861d;
+  text-shadow: 1px 1px 1px #111111;
+  background-color: #5a5959;
   padding: 5px 10%; }
 
 .cajaProductos__text--grey {
   font-size: 1.2rem;
   text-align: center;
-  color: #3D3C3C; }
+  color: #474747; }
 
 .precios-outlet {
   font-size: 1.2rem;
@@ -379,8 +386,6 @@ form {
   .iProducto {
     width: 50%;
     border-radius: 10px; }
-  section img:hover {
-    transform: scale(2); }
   .cajaProductos {
     width: 98%; }
   .productos {
@@ -403,6 +408,10 @@ form {
     margin-right: 10px; }
   .w-85 {
     width: 40%; }
+  .text-black-100 {
+    background-color: rgba(248, 244, 241, 0.466);
+    display: inline-block;
+    padding: 0 5%; }
   .w-75 {
     width: 40% !important; }
     .w-75 .img-footer {

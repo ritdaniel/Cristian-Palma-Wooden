@@ -114,11 +114,6 @@
 		width: 50%;
 		border-radius: 10px;
 	}
-
-	section img:hover{
-		transform: scale(2);
-		
-	}
 	.cajaProductos{
 		width: 98%;
 	}
@@ -151,6 +146,11 @@
 	}
 	.w-85{
 		width: 40%;
+	}
+	.text-black-100{
+		background-color:$cfooter;
+		display: inline-block; 
+		padding: 0 5%;
 	}
 	.w-75{
 		width: 40%!important;
