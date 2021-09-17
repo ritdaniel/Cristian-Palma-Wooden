@@ -229,7 +229,8 @@ h1, h2, h3, h4, a, li {
 .iProducto {
   width: 98%;
   border-radius: 15px;
-  margin: 3px; }
+  margin: 5px;
+  border: 1px double #313131; }
 
 .cajaProductos {
   background-color: rgba(248, 244, 241, 0.301);
