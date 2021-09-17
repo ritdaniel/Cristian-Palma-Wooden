@@ -103,7 +103,7 @@ body {
 .contenedor {
   display: grid;
   grid-template-columns: repeat(1, 3fr);
-  grid-template-rows: 0.6fr 2.9fr  0.2fr;
+  grid-template-rows: 0.4fr 2.9fr  0.2fr;
   grid-template-areas: "cabecera" "datos" "pie"; }
 
 .contenedorProductos {
@@ -147,11 +147,7 @@ h1, h2, h3, h4, a, li {
   border-top: 2px;
   margin-top: 2px; }
   .menuLateral nav {
-    background: linear-gradient(to bottom, rgba(148, 148, 142, 0.863), rgba(226, 226, 220, 0.7));
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    width: 98%; }
+    background: linear-gradient(to bottom, rgba(148, 148, 142, 0.863), rgba(226, 226, 220, 0.7)); }
     .menuLateral nav ul {
       list-style-type: none;
       overflow: hidden;
@@ -236,7 +232,7 @@ h1, h2, h3, h4, a, li {
   margin: 3px; }
 
 .cajaProductos {
-  background-color: rgba(248, 244, 241, 0.466);
+  background-color: rgba(248, 244, 241, 0.301);
   margin: 5px 15px; }
 
 .cajaProductos__title--orange {
@@ -265,11 +261,11 @@ form {
   justify-content: center; }
 
 .formulario__fieldset--bgtransp {
-  background-color: rgba(248, 244, 241, 0.466);
+  background-color: rgba(248, 244, 241, 0.301);
   padding: 10px; }
 
 .footer {
-  background-color: rgba(248, 244, 241, 0.466);
+  background-color: rgba(248, 244, 241, 0.301);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -336,11 +332,11 @@ form {
     display: flex;
     flex-direction: column; }
   .productos {
-    width: 50%;
+    width: 100%;
     display: flex;
     flex-direction: row; }
   .footer {
-    background-color: rgba(248, 244, 241, 0.466);
+    background-color: rgba(248, 244, 241, 0.301);
     display: flex;
     flex-direction: rows;
     justify-content: center;
@@ -409,7 +405,7 @@ form {
   .w-85 {
     width: 40%; }
   .text-black-100 {
-    background-color: rgba(248, 244, 241, 0.466);
+    background-color: rgba(248, 244, 241, 0.301);
     display: inline-block;
     padding: 0 5%; }
   .w-75 {
