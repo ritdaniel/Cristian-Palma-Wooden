@@ -55,8 +55,8 @@
 }
 .productos{
 	width: 98%;
-	border: #ffb347 2px solid;
-	margin-top: 5px ;
+	border: #797877 2px solid;
+	margin: 5px ;
 	img{
 		width: 90%;
 		border-radius: 15px;
@@ -68,6 +68,7 @@
 .cajaProductos{
 	background-color:$cfooter;
 	margin: 5px 15px;
+	border: #ffb347 2px solid;
 }
 .cajaProductos__title--orange{
 	@include title-text;

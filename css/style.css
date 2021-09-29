@@ -225,8 +225,8 @@ h1, h2, h3, h4, a, li {
 
 .productos {
   width: 98%;
-  border: #ffb347 2px solid;
-  margin-top: 5px; }
+  border: #797877 2px solid;
+  margin: 5px; }
   .productos img {
     width: 90%;
     border-radius: 15px;
@@ -235,7 +235,8 @@ h1, h2, h3, h4, a, li {
 
 .cajaProductos {
   background-color: rgba(248, 244, 241, 0.301);
-  margin: 5px 15px; }
+  margin: 5px 15px;
+  border: #ffb347 2px solid; }
 
 .cajaProductos__title--orange {
   font-size: 1.5rem;
@@ -329,7 +330,7 @@ form {
     text-decoration-style: solid;
     font-size: 1.2rem; }
   .productos {
-    width: 50%;
+    width: 48%;
     display: inline-flex;
     flex-direction: column; }
   .footer {
@@ -357,6 +358,57 @@ form {
     margin-left: 8%; } }
 
 @media only screen and (min-width: 1024px) {
+  .contenedor {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.5fr 4fr 0.5fr;
+    grid-template-areas: "cabecera cabecera cabecera" "datos datos datos" "pie pie pie"; }
+  .contenedorProductos {
+    grid-template-columns: 1.5fr 3.5fr 3.5fr;
+    grid-template-rows: 0.3fr 6fr 0.2fr;
+    grid-template-areas: "cabecera cabecera cabecera" "menuLateral datos datos" "pie pie pie"; }
+  .dropdownli a:hover {
+    background-color: #f7d265; }
+  .navbar ul li a:hover:not(.actual) {
+    transform: scale(1.2);
+    transition: 0.5s;
+    color: #141414;
+    font-size: 1.2rem; }
+  .navbar-nav ul li a.actual {
+    color: black;
+    text-decoration-style: solid;
+    font-size: 1.1rem; }
+  .iProducto {
+    width: 50%;
+    border-radius: 10px; }
+  .cajaProductos {
+    width: 98%; }
+  .productos {
+    width: 32%; }
+  .footer-left {
+    width: 50%;
+    text-align: start; }
+  .footer-right {
+    width: 45%;
+    text-align: end; }
+  .img-footer {
+    margin: 1% 10%; }
+  .icono {
+    width: 3%;
+    margin-right: 10px; }
+  .w-85 {
+    width: 40%; }
+  .text-black-100 {
+    background-color: rgba(248, 244, 241, 0.301);
+    display: inline-block;
+    padding: 0 5%; }
+  .w-75 {
+    width: 40% !important; }
+    .w-75 .img-footer {
+      width: 30%;
+      opacity: 0.7;
+      margin-left: 8%; } }
+
+@media only screen and (min-width: 1280px) {
   .contenedor {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 0.5fr 4fr 0.5fr;
