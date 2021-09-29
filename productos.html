@@ -13,6 +13,68 @@
 		<meta name="author" content="Cristian Palma">
 		<!-- Bootstrap CSS -->	
 		<link  rel="icon"  href="icono/icon.jpg" type="image/jpg" />
+
+		<style>
+			.goods_list ul{
+				width: 1000px;
+				margin: 0 auto;
+				margin-top: 100px;
+			}
+			.goods_list ul li{
+				float: left;
+				width: 240px;
+				list-style: none;
+				
+			}
+			.goods_list ul li img{
+				margin-left: 20px;
+			}
+			.goods_list ul li p{
+				text-align: center;
+			}
+			.goods_list ul li p a{
+				display: inline-block;
+				width:80px;
+				height:30px;
+				background:red;
+				color:#fff;
+				line-height:30px;
+				font-size:12px;
+				border-radius: 5px;
+				margin-left: 10px;
+				cursor:pointer;
+			}
+		</style>
+		<style>
+			.shopingCar{
+				width: 350px;
+				height:100%;
+				position: fixed;
+				top: 0;
+				right:-310px;
+				background: green;
+			}
+			.kuangk{
+				width: 40px;
+				height: 100%;
+				background:#000;
+				position:relative;
+				float:left;
+			}
+			.kuangk a{
+				color: #FFFFFF;
+				font-size: 12px;
+				width:12px;
+				position:absolute;
+				display:block;
+				background: red;
+				top:50%;
+				left:0;
+				padding:10px 14px;
+				margin-top:-42px;
+				cursor:pointer;
+			}
+		</style>
 	</head>
 	<body>
 		<div class="contenedorProductos">
@@ -80,8 +142,7 @@
 						<li><a href="#triangulares">Triangulares</a></li>
 						<li><a href="#portaLlave">Porta LLave</a></li>
 						<li><a href="#repisas">Repisas</a></li>
-						<li><a href="#jardineraMuro">Jardinera Muro</a></li>
-						<li><a href="#jardineraPiso">Jardinera Piso</a></li>
+						<li><a href="#jardineras">Jardineras</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -91,66 +152,29 @@
 				<section id="cuadrado" class="cajaProductos">
 					<h1 class="cajaProductos__title--orange" > Maceteros Cuadrados  </h1>
 					<div class="productos  ">
-						<div class="imgProd">
-							<img  src="img/cuadradoalto.png" alt="Maceteros Altos cuadrados">
-						</div>
-						<div class="descProductos">
-							<h3 class="cajaProductos__text--grey">Maceteros Cuadrados Altos</h3>
-							<ul>
-								<li>40 x 18 cm</li>
-								<li>50 x 20 cm</li>
-								<li>60 x 25 cm</li>
-							</ul>
-						</div>
-						<div class="coloresProd">
-							<h3 class="cajaProductos__text--grey">Terminaciones Mate </h3>
-							<ul>
-								<li>Natural</li>
-								<li>Roble</li>
-								<li>Palo Rosa</li>
-								<li>Cedro</li>
-							</ul>
-						</div>
+						<img  src="img/cuadradoalto.png" alt="Maceteros Altos cuadrados">
+						<h3 class="cajaProductos__text--grey">Maceteros Cuadrados Altos</h3>
+						<ul>
+							<li>40 x 18 cm</li>
+							<li>50 x 20 cm</li>
+							<li>60 x 25 cm</li>
+						</ul>
+						<h3 class="cajaProductos__text--grey">Terminaciones Mate </h3>
+						<ul>
+							<li>Natural</li>
+							<li>Roble</li>
+							<li>Palo Rosa</li>
+							<li>Cedro</li>
+						</ul>
 					</div>
-				</section>
-				<section class="cajaProductos">
-					<div class="productos">
-						<div class="imgProd">
-							<img class="iProducto"src="img/cuadrado.png" alt="">
-						</div>
-						<div class="descProductos">
-							<h3 class="cajaProductos__text--grey">Maceteros Cuadrados</h3>
-							<ul>
-								<li>30 x 30 cm</li>
-								<li>40 x 40 cm</li>
-								<li>50 x 50 cm</li>
-							</ul>
-						</div>
-						<div class="coloresProd">
-							<h3 class="cajaProductos__text--grey">Terminaciones Mate </h3>
-							<ul>
-								<li>Natural</li>
-								<li>Roble</li>
-								<li>Palo Rosa</li>
-								<li>Cedro</li>
-							</ul>
-						</div>
-					</div>
-				</section>
-				<section class="cajaProductos">
-					<div class="productos">
-						<div class="imgProd">
-							<img class="iProducto"src="img/cuadradodif.png" alt="Maceteros Piramide ">
-						</div>
-						<div class="descProductos">
+					<div class="productos  ">
+							<img src="img/cuadradodif.png" alt="Maceteros Piramide ">
 							<h3 class="cajaProductos__text--grey">Maceteros piramide</h3>
 							<ul>
 								<li>18 x 18 cm</li>
 								<li>23 x 23 cm</li>
 								<li>30 x 30 cm</li>
 							</ul>
-						</div>
-						<div class="coloresProd">
 							<h3 class="cajaProductos__text--grey">Terminaciones Mate </h3>
 							<ul>
 								<li>Natural</li>
@@ -158,18 +182,46 @@
 								<li>Palo Rosa</li>
 								<li>Cedro</li>
 							</ul>
-						</div>
+					</div>
+					<div class="productos ">
+						<img src="img/cuadrado.png" alt="Maceteros Cuadrados">
+							<h3 class="cajaProductos__text--grey">Maceteros Cuadrados</h3>
+							<ul>
+								<li>30 x 30 cm</li>
+								<li>40 x 40 cm</li>
+								<li>50 x 50 cm</li>
+							</ul>
+							<h3 class="cajaProductos__text--grey">Terminaciones Mate </h3>
+							<ul>
+								<li>Natural</li>
+								<li>Roble</li>
+								<li>Palo Rosa</li>
+								<li>Cedro</li>
+							</ul>
 					</div>
 				</section>
+				<section class="cajaProductos">
+					<div class="goods_list imgProd">
+						<ul>
+							<li>
+								 <img src="im/cuadradoalto.png" alt="Maceteros Altos cuadrados" />
+								 <p class = "top_name"> Macetero Cuadrado Alto </ p>
+								 <p> <span> $ 23.000.- </ span> <a> Añadir al carrito </a> </ p>
+							</li>
+							<li>
+								<img src="im/cuadradoalto.png" alt="Maceteros Altos cuadrados" />
+								<p class = "top_name"> Macetero Cuadrado Alto </ p>
+								<p> <span> $ 23.000.- </ span> <a> Añadir al carrito </a> </ p>
+						   </li>
+						</ul>
+					</div>
+					</section>
 				<br><br>
 				<section id="hexagonales" class="cajaProductos">
 					<h1 class="cajaProductos__title--orange" > Maceteros Hexagonales  <a href="#mLateral" >
 						<img class="subir" src="icono/subir.png" alt="subir"></a></h1>
 					<div class="productos">
-						<div class="imgProd">
 							<img class="iProducto"src="img/hexagonal.png" alt="Maceteros Exagonales">
-						</div>
-						<div class="descProductos">
 							<h3 class="cajaProductos__text--grey">Maceteros Exagonales</h3>
 							<ul>
 								<li>18 x 18 cm</li>
@@ -177,8 +229,6 @@
 								<li>30 x 30 cm</li>
 								<li>40 x 40 cm</li>
 							</ul>
-						</div>
-						<div class="coloresProd">
 							<h3 class="cajaProductos__text--grey">Terminaciones Mate</h3>
 							<ul>
 								<li>Natural</li>
@@ -187,28 +237,21 @@
 								<li>Cedro</li>
 							</ul>
 						</div>
-					</div>
 				</section>
 				<br><br>
 				<section id="triangulares" class="cajaProductos">
 					<h1 class="cajaProductos__title--orange" > Maceteros Triangulares <a href="#mLateral" >
 						<img class="subir" src="icono/subir.png" alt="subir"></a></h1>
 					<div class="productos">
-						<div class="imgProd">
-							<img class="iProducto"src="img/triangular.png" alt=" Maceteros triangulares">
-						</div>
-						<div class="descProductos">
+							<img src="img/triangular.png" alt=" Maceteros triangulares">
 							<h3 class="cajaProductos__text--grey">Maceteros triangulares</h3>
 							<ul>
 								<li>10 x 25 cm</li>	
 							</ul>
-						</div>
-						<div class="coloresProd">
 							<h3 class="cajaProductos__text--grey">Terminacion Mate </h3>
 							<ul>
 								<li>Natural</li>
 							</ul>
-						</div>
 					</div>
 				</section>
 				<br><br>
@@ -216,40 +259,26 @@
 					<h1 class="cajaProductos__title--orange"> Porta LLaves   <a href="#mLateral" >
 						<img class="subir" src="icono/subir.png" alt="subir"></a></h1>
 					<div class="productos">
-						<div class="imgProd">
-							<img class="iProducto"src="img/detalles.png" alt="Porta LLaves">
-						</div>
-						<div class="descProductos">
+							<img src="img/detalles.png" alt="Porta LLaves">
 							<h3 class="cajaProductos__text--grey">Porta LLaves</h3>
 							<ul>
 								<li> 25 x 43 cm </li>
 							</ul>
-						</div>
-						<div class="coloresProd">
 							<h3 class="cajaProductos__text--grey">Terminaciones Mate </h3>
 							<ul>
 								<li>Natural</li>
 							</ul>
 						</div>
-					</div>
-				</section>
-				<section id="portaLlave" class="cajaProductos">
 					<div class="productos">
-						<div class="imgProd">
-							<img class="iProducto"src="img/portaconplanta.png" alt="Porta LLaves con macetero y suculenta">
-						</div>
-						<div class="descProductos">
+							<img src="img/portaconplanta.png" alt="Porta LLaves con macetero y suculenta">
 							<h3 class="cajaProductos__text--grey">Porta LLaves con macetero y suculenta</h3>
 							<ul>
 								<li>13 x 30 cm (Alto incluye altura del macetero)</li>
 							</ul>
-						</div>
-						<div class="coloresProd">
 							<h3 class="cajaProductos__text--grey">Terminaciones Mate </h3>
 							<ul>
 								<li>Natural</li>
 							</ul>
-						</div>
 					</div>
 				</section>
 				<br><br>
@@ -257,59 +286,40 @@
 					<h1 class="cajaProductos__title--orange" > Repisa  <a href="#mLateral" >
 						<img class="subir" src="icono/subir.png" alt="subir"></a></h1>
 					<div class="productos">
-						<div class="imgProd">
-							<img class="iProducto"src="img/repisa.png" alt="Repisas">
-						</div>
-						<div class="descProductos">
+						<img src="img/repisa.png" alt="Repisas">
 							<h3 class="cajaProductos__text--grey">Repisas</h3>
 							<ul>
 								<li>61 cm alto y ancho, 11,5 cm de profundidad.</li>
 							</ul>
-						</div>
-						<div class="coloresProd">
 							<h3 class="cajaProductos__text--grey">Terminaciones Mate  en colores</h3>
 							<ul>
 								<li>Palo Rosa</li>
 							</ul>
-						</div>
 					</div>
-				</section>
-				<section id="repisas" class="cajaProductos">
 					<div class="productos">
-						<div class="imgProd">
 							<img class="iProducto"src="img/mediaLuna.png" alt="Repisas forma media luna">
-						</div>
-						<div class="descProductos">
 							<h3 class="cajaProductos__text--grey">Repisas</h3>
 							<ul>
 								<li>61 cm alto, 24 cm ancho y 11,5 cm profundidad</li>
 							</ul>
-						</div>
-						<div class="coloresProd">
 							<h3 class="cajaProductos__text--grey">Terminaciones Mate  en colores</h3>
 							<ul>
 								<li>Palo Rosa</li>
 							</ul>
-						</div>
 					</div>
 				</section>
 				<br><br>
-				<section id="jardineraMuro" class="cajaProductos">
-					<h1 class="cajaProductos__title--orange" > Jardinera a Muro <a href="#mLateral" >
+				<section id="jardineras" class="cajaProductos">
+					<h1 class="cajaProductos__title--orange" > Jardineras <a href="#mLateral" >
 						<img class="subir" src="icono/subir.png" alt="subir"></a></h1>
 					<div class="productos">
-						<div class="imgProd">
-							<img class="iProducto"src="img/jardinera.png" alt="Jardineras a Muro">
-						</div>
-						<div class="descProductos">
+							<img src="img/jardinera.png" alt="Jardineras Piso / Muro">
 							<h3 class="cajaProductos__text--grey">Jardinera a Muro</h3>
 							<ul>
 								<li>100 x 100 cm</li>
 								<li>120 x 90 cm</li>
 								<li>150 x 90 cm</li>
 							</ul>
-						</div>
-						<div class="coloresProd">
 							<h3 class="cajaProductos__text--grey">Terminaciones Mate</h3>
 							<ul>
 								<li>Natural</li>
@@ -317,26 +327,15 @@
 								<li>Palo Rosa</li>
 								<li>Cedro</li>
 							</ul>
-						</div>
 					</div>
-				</section>
-				<br><br>
-				<section id="jardineraPiso" class="cajaProductos">
-					<h1 class="cajaProductos__title--orange" > Jardinera a Piso <a href="#mLateral" >
-						<img class="subir" src="icono/subir.png" alt="subir"></a></h1>
 					<div class="productos">
-						<div class="imgProd">
-							<img class="iProducto"src="img/jardineraPiso.png" alt="Jardinera a Piso">
-						</div>
-						<div class="descProductos">
+							<img src="img/jardineraPiso.png" alt="Jardinera a Piso">
 							<h3 class="cajaProductos__text--grey">Jardinera a Piso</h3>
 							<ul>
 								<li>60 x 70 x 20 cm</li>
 								<li>50 x 70 x 20 cm</li>
 								<li>40 x 70 x 20 cm</li>
 							</ul>
-						</div>
-						<div class="coloresProd">
 							<h3 class="cajaProductos__text--grey">Terminaciones Mate</h3>
 							<ul>
 								<li>Natural</li>
@@ -344,7 +343,6 @@
 								<li>Palo Rosa</li>
 								<li>Cedro</li>
 							</ul>
-						</div>
 					</div>
 				</section>
 			</div>		

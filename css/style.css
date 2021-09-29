@@ -224,20 +224,13 @@ h1, h2, h3, h4, a, li {
   color: #4E4C4C; }
 
 .productos {
-  width: 99%;
-  border: #ffb347 2px solid; }
-
-.descProuctos, .coloresProd {
-  width: 100%;
-  align-items: center; }
-
-.imgProd {
-  width: 99%;
-  align-items: center; }
-  .imgProd img {
-    width: 98%;
+  width: 98%;
+  border: #ffb347 2px solid;
+  margin-top: 5px; }
+  .productos img {
+    width: 90%;
     border-radius: 15px;
-    margin: 5px;
+    margin: 5%;
     border: 1px double #313131; }
 
 .cajaProductos {
@@ -389,11 +382,7 @@ form {
   .cajaProductos {
     width: 98%; }
   .productos {
-    width: 100%; }
-  .imgProd {
-    width: 35%; }
-  .coloresProd {
-    width: 25%; }
+    width: 24.5%; }
   .footer-left {
     width: 50%;
     text-align: start; }

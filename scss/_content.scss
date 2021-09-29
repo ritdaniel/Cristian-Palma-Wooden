@@ -54,24 +54,17 @@
 	color: #4E4C4C;
 }
 .productos{
-	width: 99%;
-	border: #ffb347 2px solid;
-	
-}
-.descProuctos, .coloresProd{
-	width: 100%;
-	align-items: center;
-}
-.imgProd{
-	width: 99%;
-	align-items: center;
-	img{
 	width: 98%;
-	border-radius: 15px;
-    margin: 5px ;
-	border: 1px double rgb(49, 49, 49); 
-	}
+	border: #ffb347 2px solid;
+	margin-top: 5px ;
+	img{
+		width: 90%;
+		border-radius: 15px;
+		margin: 5% ;
+		border: 1px double rgb(49, 49, 49); 
+		}
 }
+
 .cajaProductos{
 	background-color:$cfooter;
 	margin: 5px 15px;
