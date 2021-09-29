@@ -3,6 +3,7 @@
 $cpnav:rgb(255, 102, 0);
 $csnav:rgba(224, 158, 34, 0.808);
 $cfooter:rgba(248, 244, 241, 0.301);
+$cbody:rgba(248, 244, 241, 0.562);
 $wlogo:180px;
 $fontnav:$fmedio;
 $pstandar:5px;
@@ -21,7 +22,7 @@ $maxbody: 98%;
 }
 
 body{
-  background-image:url(../img/fondow1.jpg);
+  background-image:url(../icono/fondow1.jpg);
   background-size:cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -37,7 +38,7 @@ body{
 .contenedorProductos{
 	display: grid;
 	grid-template-columns: repeat(1, 4fr);
-	grid-template-rows: 0.2fr 0.2fr 5.5fr  0.4fr;
+	grid-template-rows: 0.1fr 0.2fr 5.5fr  0.4fr;
 	grid-template-areas:"cabecera" "menuLateral" "datos" "pie";
 } 
 .cabecera{ 
@@ -46,7 +47,15 @@ body{
 .menuLateral{
 	grid-area: menuLateral;
 }
+.datos{
+	grid-area: datos;
+}
 .pie{
 	grid-area: pie;
 }
 
+.text-black-100{
+	background-color: #f8f6f1;
+    display: inline-block; 
+	padding: 5px;
+}
