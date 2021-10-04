@@ -1,56 +1,22 @@
 <!doctype html>
 <html lang="es">
   	<head>
-		<!-- Required meta tags -->
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<!-- Bootstrap CSS -->
+		<!-- incorporamos Bootstrap CSS -->
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<script src="js/listbox.js"></script>
 		<title> Wooden. Maceteros, jardineras y repisas de madera </title>
 		<meta name="descripcion" content="Encuentra todos nuestros productos fabricados artesanalmente con madera">
 		<meta name="keyword" content="maceteros,wooden, jardin, jardinera, repisas, artesanal, madera">
-		<meta name="author" content="Cristian Palma">
-		<!-- Bootstrap CSS -->	
+		<meta name="author" content="Cristian Palma">	
 		<link  rel="icon"  href="icono/icon.jpg" type="image/jpg" />
-
-		<style>
-			.goods_list ul{
-				width: 1000px;
-				margin: 0 auto;
-				margin-top: 100px;
-			}
-			.goods_list ul li{
-				float: left;
-				width: 240px;
-				list-style: none;
-				
-			}
-			.goods_list ul li img{
-				margin-left: 20px;
-			}
-			.goods_list ul li p{
-				text-align: center;
-			}
-			.goods_list ul li p a{
-				display: inline-block;
-				width:80px;
-				height:30px;
-				background:red;
-				color:#fff;
-				line-height:30px;
-				font-size:12px;
-				border-radius: 5px;
-				margin-left: 10px;
-				cursor:pointer;
-			}
-		</style>
-		
 	</head>
 	<body>
 		<div class="contenedorProductos">
 			<div class="cabecera">
-			 <!--////////////////////////////   NAV  //////////////////////////////-->
+			 <!-- ---------------- ------------ NAV  ----------------------------------------->
 				<nav class="navbar navbar-expand-lg navbar-light bg-light">
 					<div class="container-fluid">
 						<a class="navbar-brand" href="index.html"><img class="navbar__img--logo"src="icono/logo.jpg" alt=""></a>
@@ -69,7 +35,7 @@
 										<li><a class="dropdown-item" href="#maceteros">Maceteros</a></li>
 										<li><a class="dropdown-item" href="#portaLlave">Porta LLaves</a></li>
 										<li><a class="dropdown-item" href="#repisas">Repisas</a></li>
-										<li><a class="dropdown-item" href="#jardineraMuro">Jardinera</a></li>
+										<li><a class="dropdown-item" href="#jardineras">Jardinera</a></li>
 									</ul>
 								</li>
 								<li class="nav-item dropdown">
@@ -103,6 +69,7 @@
 						 <img class="rrss__img--sm " src="icono/face.png" alt="Facebook Wooden"></a>
 					<h1 class=" datos__title--tprincipal tit" > Productos  </h1>
 				</div>	
+				<!-- Fin Redes sociales -->
 			</div>
 			<!----------------- Menu izquierdo--------------->
 			<div  id="mLateral" class="menuLateral">
@@ -119,137 +86,156 @@
 			</div>
 			<!-- Fin menu izquierdo -->	
 			<!-- comienzo contenido -->
-			<div class="datos">	
+			<div class="datos">		
 				<section id="cuadrado" class="cajaProductos">
 					<h1 class="cajaProductos__title--orange" > Maceteros Cuadrados  </h1>
-					<div class="productos  ">
-						<img  src="img/cuadradoalto.png" alt="Maceteros Altos cuadrados">
+					<div class="productos">
+						<img  src="img/cuadradoAlto.png" alt="Maceteros Altos cuadrados">
 						<h3 class="cajaProductos__text--grey">Maceteros Cuadrados Altos</h3>
-						<ul>
-							<li >40 x 18 cm</li>
-							<li>50 x 20 cm</li>
-							<li>60 x 25 cm</li>
-						</ul>
-						<h3 class="cajaProductos__text--grey">Terminaciones Mate </h3>
-						<ul>
-							<li>Natural</li>
-							<li>Roble</li>
-							<li>Palo Rosa</li>
-							<li>Cedro</li>
-						</ul>
+						<p class="descripcion"> Hermosos Maceteros Alargados </p>
+						<form>
+							<h6>Seleccione medida :</h6>
+							<select id="medidaAlto" onchange="valorAlto()">
+							<option>Medida Macetero</option>
+							  <option>40 cm x 18 cm</option>
+							  <option>50 cm x 20 cm</option>
+							  <option>60 cm x 25 cm</option>
+							</select>
+						</form>
+						<p id="precioA" class="precio"></p>
+						<a class="agregar"> Añadir al carro </a><br>
 					</div>
-					<div class="productos  ">
-							<img src="img/cuadradodif.png" alt="Maceteros Piramide ">
-							<h3 class="cajaProductos__text--grey">Maceteros piramide</h3>
-							<ul>
-								<li>18 x 18 cm</li>
-								<li>23 x 23 cm</li>
-								<li>30 x 30 cm</li>
-							</ul>
-							<h3 class="cajaProductos__text--grey">Terminaciones Mate </h3>
-							<ul>
-								<li>Natural</li>
-								<li>Roble</li>
-								<li>Palo Rosa</li>
-								<li>Cedro</li>
-							</ul>
+					<div class="productos">
+						<img src="img/cuadradodif.png" alt="Maceteros tipo Piramide">
+						<h3 class="cajaProductos__text--grey">Maceteros Tipo piramide</h3>
+						<p class="descripcion"> Macetero de madera tipo piramide diferentes medidas </p>
+						<form>
+							<h6>Seleccione medida :</h6>
+							<select id="medidaPiramide" onchange="valorPiramide()">
+							  <option>Medida Macetero</option>
+							  <option>18 cm x 18 cm</option>
+							  <option>23 cm x 23 cm</option>
+							  <option>30 cm x 30 cm</option>
+							</select>
+						</form>
+							<p id="precioP" class="precio"></p>
+							<a class="agregar"> Añadir al carro </a>
+							<br>
 					</div>
-					<div class="productos ">
+					<div class="productos">
+							<img src="img/cuadradobajo.png" alt="Maceteros Bajo">
+							<h3 class="cajaProductos__text--grey">Maceteros Bajos</h3>
+							<p class="descripcion"> Macetero de madera con protector de madera acabado mate </p>
+						<form>
+							<h6>Seleccione medida:</h6>
+							<select id="medidaBajo" onchange="valorBajo()">
+								<option>Medida Macetero</option>
+							  <option>25 cm x 18 cm</option>
+							  <option>30 cm x 23 cm</option>
+							  <option>39 cm x 30 cm</option>
+							</select>
+						</form>
+							<p id="precioB" class="precio"></p>
+							<a class="agregar"> Añadir al carro </a>
+							<br>
+					</div>
+					<div class="productos">
 						<img src="img/cuadrado.png" alt="Maceteros Cuadrados">
 							<h3 class="cajaProductos__text--grey">Maceteros Cuadrados</h3>
-							<ul>
-								<li>30 x 30 cm</li>
-								<li>40 x 40 cm</li>
-								<li>50 x 50 cm</li>
-							</ul>
-							<h3 class="cajaProductos__text--grey">Terminaciones Mate </h3>
-							<ul>
-								<li>Natural</li>
-								<li>Roble</li>
-								<li>Palo Rosa</li>
-								<li>Cedro</li>
-							</ul>
-					</div>
+							<p class="descripcion"> Macetero de madera con protector de madera acabado mate </p>
+							<form>
+								<h6>Seleccione medida:</h6>
+								<select id="medidaCuadrado" onchange="valorCuadrado()">
+									<option>Medida Macetero</option>
+								  <option>30 cm x 30 cm</option>
+								  <option>40 cm x 40 cm</option>
+								  <option>50 cm x 50 cm</option>
+								</select>
+							</form>
+								<p id="precioC" class="precio"></p>
+								<a class="agregar"> Añadir al carro </a>
+								<br>
+						</div>
 				</section>
-				<section class="cajaProductos">
-					<div class="goods_list imgProd">
-						<ul>
-							<li>
-								 <img src="im/cuadradoalto.png" alt="Maceteros Altos cuadrados" />
-								 <p class = "top_name"> Macetero Cuadrado Alto </ p>
-								 <p> <span> $ 23.000.- </ span> <a> Añadir al carrito </a> </ p>
-							</li>
-							<li>
-								<img src="im/cuadradoalto.png" alt="Maceteros Altos cuadrados" />
-								<p class = "top_name"> Macetero Cuadrado Alto </ p>
-								<p> <span> $ 23.000.- </ span> <a> Añadir al carrito </a> </ p>
-						   </li>
-						</ul>
-					</div>
-					</section>
-				<br><br>
+				<br>
 				<section id="hexagonales" class="cajaProductos">
 					<h1 class="cajaProductos__title--orange" > Maceteros Hexagonales  <a href="#mLateral" >
 						<img class="subir" src="icono/subir.png" alt="subir"></a></h1>
 					<div class="productos">
-							<img class="iProducto"src="img/hexagonal.png" alt="Maceteros Exagonales">
+							<img src="img/hexagonal.png" alt="Maceteros Exagonales">
 							<h3 class="cajaProductos__text--grey">Maceteros Exagonales</h3>
-							<ul>
-								<li>18 x 18 cm</li>
-								<li>23 x 23 cm</li>
-								<li>30 x 30 cm</li>
-								<li>40 x 40 cm</li>
-							</ul>
-							<h3 class="cajaProductos__text--grey">Terminaciones Mate</h3>
-							<ul>
-								<li>Natural</li>
-								<li>Roble</li>
-								<li>Palo Rosa</li>
-								<li>Cedro</li>
-							</ul>
+							<p class="descripcion"> Macetero de madera con protector de madera acabado mate </p>
+							<form>
+								<h6>Seleccione medida:</h6>
+								<select id="medidaHexagonal" onchange="valorHexagonal()">
+									<option>Medida Macetero</option>
+								  <option>18 cm x 18 cm</option>
+								  <option>23 cm x 23 cm</option>
+								  <option>30 cm x 30 cm</option>
+								  <option>40 cm x 40 cm</option>
+								</select>
+							</form>
+								<p id="precioH" class="precio"></p>
+								<a class="agregar"> Añadir al carro </a>
+								<br>
 						</div>
 				</section>
-				<br><br>
+				<br>
 				<section id="triangulares" class="cajaProductos">
 					<h1 class="cajaProductos__title--orange" > Maceteros Triangulares <a href="#mLateral" >
 						<img class="subir" src="icono/subir.png" alt="subir"></a></h1>
 					<div class="productos">
 							<img src="img/triangular.png" alt=" Maceteros triangulares">
 							<h3 class="cajaProductos__text--grey">Maceteros triangulares</h3>
-							<ul>
-								<li>10 x 25 cm</li>	
-							</ul>
-							<h3 class="cajaProductos__text--grey">Terminacion Mate </h3>
-							<ul>
-								<li>Natural</li>
-							</ul>
-					</div>
+							<p class="descripcion"> Macetero de madera con protector de madera acabado mate </p>
+							<form>
+								<h6>Seleccione medida: </h6>
+								<select id="medidaTriangulo" onchange="valorTriangulo()">
+									<option>Medida Macetero </option>
+								  <option>10 cm x 25 cm</option>
+								  <option>15 cm x 28 cm</option>
+								</select>
+							</form>
+								<p id="precioT" class="precio"></p>
+								<a class="agregar"> Añadir al carro </a>
+								<br>
+						</div>
 				</section>
 				<br><br>
 				<section id="portaLlave" class="cajaProductos">
-					<h1 class="cajaProductos__title--orange"> Porta LLaves   <a href="#mLateral" >
+					<h1 class="cajaProductos__title--orange"> Porta LLaves<a href="#mLateral" >
 						<img class="subir" src="icono/subir.png" alt="subir"></a></h1>
 					<div class="productos">
 							<img src="img/detalles.png" alt="Porta LLaves">
 							<h3 class="cajaProductos__text--grey">Porta LLaves</h3>
-							<ul>
-								<li> 25 x 43 cm </li>
-							</ul>
-							<h3 class="cajaProductos__text--grey">Terminaciones Mate </h3>
-							<ul>
-								<li>Natural</li>
-							</ul>
-						</div>
+							<p class="descripcion"> Porta LLave de madera con acabado mate </p>
+						<form>
+							<h6>Seleccione medida: </h6>
+							<select id="medidaPortaLlave" onchange="valorPortaLlave()">
+								<option>Medida Porta LLave </option>
+							  <option>20 cm x 38 cm</option>
+							  <option>25 cm x 43 cm</option>
+							</select>
+						</form>
+						<p id="precioPL" class="precio"></p>
+						<a class="agregar"> Añadir al carro </a>
+							<br>
+					</div>
 					<div class="productos">
 							<img src="img/portaconplanta.png" alt="Porta LLaves con macetero y suculenta">
 							<h3 class="cajaProductos__text--grey">Porta LLaves con macetero y suculenta</h3>
-							<ul>
-								<li>13 x 30 cm (Alto incluye altura del macetero)</li>
-							</ul>
-							<h3 class="cajaProductos__text--grey">Terminaciones Mate </h3>
-							<ul>
-								<li>Natural</li>
-							</ul>
+							<p class="descripcion"> Porta LLave de madera con macetero y suculenta </p>
+						<form>
+							<h6>Seleccione medida: </h6>
+							<select id="medidaPortaMacetero" onchange="valorPortaMacetero()">
+								<option>Medida Porta LLave </option>
+							  <option>13 cm x 30 cm</option>
+							  <option>18 cm x 30 cm</option>
+							</select>
+						</form>
+						<p id="precioPM" class="precio"></p>
+						<a class="agregar"> Añadir al carro </a>
+							<br>
 					</div>
 				</section>
 				<br><br>
@@ -259,25 +245,52 @@
 					<div class="productos">
 						<img src="img/repisa.png" alt="Repisas">
 							<h3 class="cajaProductos__text--grey">Repisas</h3>
-							<ul>
-								<li>61 cm alto y ancho, 11,5 cm de profundidad.</li>
-							</ul>
-							<h3 class="cajaProductos__text--grey">Terminaciones Mate  en colores</h3>
-							<ul>
-								<li>Palo Rosa</li>
-							</ul>
+							<p class="descripcion"> Porta LLave de madera con macetero y suculenta </p>
+						<form>
+							<h6>Seleccione medida: </h6>
+							<select id="medidaRepisa" onchange="valorRepisa()">
+								<option>Medida Repisa </option>
+							  <option>51 cm x 51 cm x 11,5 cm</option>
+							  <option>61 cm x 61 cm x 11,5 cm</option>
+							</select>
+						</form>
+						<p id="precioR" class="precio"></p>
+						<a class="agregar"> Añadir al carro </a>
+							<br>
 					</div>
+					
 					<div class="productos">
 							<img class="iProducto"src="img/mediaLuna.png" alt="Repisas forma media luna">
-							<h3 class="cajaProductos__text--grey">Repisas</h3>
-							<ul>
-								<li>61 cm alto, 24 cm ancho y 11,5 cm profundidad</li>
-							</ul>
-							<h3 class="cajaProductos__text--grey">Terminaciones Mate  en colores</h3>
-							<ul>
-								<li>Palo Rosa</li>
-							</ul>
+							<h3 class="cajaProductos__text--grey">Repisas Media Luna</h3>
+							<p class="descripcion"> Porta LLave de madera con macetero y suculenta </p>
+						<form>
+							<h6>Seleccione medida: </h6>
+							<select id="medidaMediaLuna" onchange="valorMediaLuna()">
+								<option>Medida Media Luna </option>
+							  <option>51 cm x 20 cm x 11,5 cm</option>
+							  <option>61 cm x 24 cm x 11,5 cm</option>
+							</select>
+						</form>
+						<p id="precioML" class="precio"></p>
+						<a class="agregar"> Añadir al carro </a>
+							<br>
 					</div>
+					<div class="productos">
+						<img class="iProducto"src="img/hexagono.png" alt="pack Repisas hexagono">
+						<h3 class="cajaProductos__text--grey">Pack 3 Repisas Hexagono</h3>
+						<p class="descripcion"> Pack de 3 Repisas Exagono </p>
+					<form>
+						<h6>Seleccione medida: </h6>
+						<select id="medidaRepisaH" onchange="valorRepisaH()">
+							<option>Medida Repisa Hexagono </option>
+						  <option>50 cm x 57 cm x 11,5 cm</option>
+						  <option>60 cm x 67 cm x 11,5 cm</option>
+						</select>
+					</form>
+					<p id="precioRH" class="precio"></p>
+					<a class="agregar"> Añadir al carro </a>
+						<br>
+				</div>
 				</section>
 				<br><br>
 				<section id="jardineras" class="cajaProductos">
@@ -285,35 +298,37 @@
 						<img class="subir" src="icono/subir.png" alt="subir"></a></h1>
 					<div class="productos">
 							<img src="img/jardinera.png" alt="Jardineras Piso / Muro">
-							<h3 class="cajaProductos__text--grey">Jardinera a Muro</h3>
-							<ul>
-								<li>100 x 100 cm</li>
-								<li>120 x 90 cm</li>
-								<li>150 x 90 cm</li>
-							</ul>
-							<h3 class="cajaProductos__text--grey">Terminaciones Mate</h3>
-							<ul>
-								<li>Natural</li>
-								<li>Roble</li>
-								<li>Palo Rosa</li>
-								<li>Cedro</li>
-							</ul>
+							<h3 class="cajaProductos__text--grey">Jardinera Dinamica Muro</h3>
+							<p class="descripcion"> Porta LLave de madera con macetero y suculenta </p>
+						<form>
+							<h6>Seleccione medida: </h6>
+							<select id="medidaJardineraMuro" onchange="valorJardineraMuro()">
+								<option>Medida Jardinera  </option>
+							  <option>100 cm x 100 cm</option>
+							  <option>120 cm x 90 cm</option>
+							  <option>150 cm x 90 cm</option>
+							</select>
+						</form>
+						<p id="precioJM" class="precio"></p>
+						<a class="agregar"> Añadir al carro </a>
+							<br>
 					</div>
 					<div class="productos">
 							<img src="img/jardineraPiso.png" alt="Jardinera a Piso">
 							<h3 class="cajaProductos__text--grey">Jardinera a Piso</h3>
-							<ul>
-								<li>60 x 70 x 20 cm</li>
-								<li>50 x 70 x 20 cm</li>
-								<li>40 x 70 x 20 cm</li>
-							</ul>
-							<h3 class="cajaProductos__text--grey">Terminaciones Mate</h3>
-							<ul>
-								<li>Natural</li>
-								<li>Roble</li>
-								<li>Palo Rosa</li>
-								<li>Cedro</li>
-							</ul>
+							<p class="descripcion"> Porta LLave de madera con macetero y suculenta </p>
+						<form>
+							<h6>Seleccione medida: </h6>
+							<select id="medidaJardineraPiso" onchange="valorJardineraPiso()">
+								<option>Medida Jardinera  </option>
+							  <option>60 cm x 70 cm x 20 cm</option>
+							  <option>50 cm x 70 cm x 20 cm</option>
+							  <option>40 cm x 70 cm x 20 cm</option>
+							</select>
+						</form>
+						<p id="precioJP" class="precio"></p>
+						<a class="agregar"> Añadir al carro </a>
+							<br>
 					</div>
 				</section>
 			</div>		
@@ -349,3 +364,4 @@
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>	
 	</body>
 </html>
+

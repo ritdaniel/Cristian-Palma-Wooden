@@ -2,17 +2,15 @@
 	background:linear-gradient(to bottom,$cpnav,$csnav);
 	ul{
 		li{
-			
 			a{ 
 				color: rgb(20, 20, 20);
 				font-size:$fn;
 				margin-left: 10px;
-			}
+				}
 			a:hover{
 				transform: scale(1.1);	
 				transition: 0.5s;				
-			}
-
+				}
 		}
 	}
 }

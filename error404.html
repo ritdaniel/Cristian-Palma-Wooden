@@ -6,45 +6,141 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<link  rel="icon"  href="icono/icon.jpg" type="image/jpg" />
     <style>
+		@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;500;700&display=swap');
     	body {
  			background-image: url(icono/fondow1.jpg);
-			background-size:auto;
+			background-size:cover;
 			background-position: center;
 			background-repeat: no-repeat;
-			width: 98%;
-			margin: auto; }
-  			
-  		.foter__title--grey {
-  			color: #2B2B2B;
-  			font-size: 1.2rem; 	}
-
-  		.datos__title--tprincipal {
-  			font-size: 1.5rem;
-			font-weight: bold;
+			width: 98%; 
 			text-align: center;
+		}
+		.footer{
+			background-color:rgba(248, 244, 241, 0.301);
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			margin-top: 5px;
+		}
+  			
+  		.datos__title--tprincipal {
+  			font-size: 1.2rem;
+			font-weight: bold;
 			margin: 2px 0px;
 			color: #4D4A4A; }
 				
-		img{
-			width: 100%;
-			align-content: center;
-			margin: auto;}
+		.trabajador{
+			width: 70%;	
+			margin: 0 15% 10% 15%;
+		}
 
-		@media only screen and (min-width: 1024px){
-			img{
-				width: 36%;
+		.footer-links a{
+			font-family: 'Barlow Semi Condensed';
+			line-height: 1.8;
+			text-decoration: none;
+			color:  inherit;
+			text-align: center;
+		}
+		.img-footer{
+			width: 30%;
+			opacity:0.8;
+			margin: 1% 30%;
+		}
+		.icono{
+			width:5%;
+			margin-right: 7px;	
+		}
+
+		.footer-left, .footer-right{
+			width: 95%;
+			display: inline-block;
+			vertical-align: top;
+		}
+		.footer-left{
+			text-align: center;
+		}
+		.footer-right a{
+			text-decoration: none;
+			color: black;
+			font-weight: bold;
+		}
+		@media only screen and (min-width: 768px){
+			.trabajador{
+				width: 60%;
 				align-content: center;
-				margin: auto;}
+				margin: 0 20%;
+			}
+			.footer-left{ 
+				width: 50%;
+				text-align: start;
+			}
+			.footer-right{
+				width: 45%;
+				text-align: end;
+			}
+			.img-footer{
+				margin: 1% 10%;
+			}
+			.icono{
+				width: 3%;
+				margin-right: 10px;
+			}
+		}
+		@media only screen and (min-width: 1024px){
+			.trabajador{
+				width: 60%;
+				align-content: center;
+				margin: 0 20%;
+			}
+		}
+
+		@media only screen and (min-width: 1280px){
+			.trabajador{
+				width: 23%;
+				align-content: center;
+				margin: 0 38%
+			}
+			
 		}	
     </style>
 	<title> Error Pagina No encontrada</title>
 </head>
 <body >
-	<h1 class="datos__title--tprincipal" > Pagina No encontrada, estamos redireccionando a Nuestra pagina </h1><br>
-	<img src="icono/trabajando.svg" alt="error Pagina No Encontrada">
+	<br>
+	<h1 class="datos__title--tprincipal" > UPS.. nos falto material para terminar </h1>
+	<h4>Mientras te redireccionaremos al Home </h4>
+	<img src="icono/trabajando.svg" alt="error Pagina No Encontrada" class="trabajador">
 		<script>
 			function r() { location.href="index.html" } 
 			setTimeout ("r()", 5000);
 		</script>
+	<div class="pie">
+		<div class="pie">
+			<footer class="footer">
+				<div class="footer-left">
+					<img class="img-footer"src="icono/logo.jpg" alt="Wooden">				
+					<p class="footer-links">
+						<a href="index.html">Home</a> I 
+						<a href="productos.html">Productos</a> I
+						<a href="Outlet.html">Outlet</a> I
+						<a href="nosotros.html">Nosotros</a> I					  						  
+						<a href="contactanos.html">Contacto</a> I <br>
+					WOODEN © 2020 </p> 
+				</div>
+				<div class="footer-right">
+					<br>
+					<div>
+						<P><img class="icono" src="icono/mapa.png" alt="Ubicacion"> Gaete Barrio Norte Concepcion, Chile</p>
+					</div>
+					<div>
+						<P><img class="icono" src="icono/telefono.svg" alt="Telefono"> +56 9 9591 3119 </P>
+					</div>
+					<div>
+						<p><img class="icono" src="icono/email.png" alt="Email"><a href="mailto:contacto@wooden.cl">&nbsp;  Contacto@wooden.cl</a></p>
+					</div>
+				</div>
+			</footer>
+		</div>
+	</div>
 </body>
 </html>
