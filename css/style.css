@@ -19,7 +19,7 @@ h6 {
 select {
   font-family: "Barlow Semi Condensed";
   size: 1.5rem;
-  background-color: #f1ab5a9d;
+  background-color: #f0d4b363;
   padding: 2px; }
 
 .precio {
@@ -164,7 +164,7 @@ h6 {
 select {
   font-family: "Barlow Semi Condensed";
   size: 1.5rem;
-  background-color: #f1ab5a9d;
+  background-color: #f0d4b363;
   padding: 2px; }
 
 .precio {
@@ -220,6 +220,13 @@ select {
           transition: 0.5s;
           color: #e44607; }
 
+.whatsapp {
+  float: right;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  width: 3%; }
+
 .rrss__img--sm {
   width: 2em;
   float: right;
@@ -236,10 +243,7 @@ select {
   float: inherit;
   color: #df861d;
   background-color: rgba(248, 244, 241, 0.562);
-  padding: 5px 10%;
-  border-bottom: #a7a2a2 2px solid;
-  border-left: #a7a2a2 2px solid;
-  border-right: #a7a2a2 2px solid; }
+  padding: 5px; }
 
 .descripcion {
   text-align: center;
@@ -299,22 +303,12 @@ select {
 .cajaProductos__text--grey {
   font-size: 1.2rem;
   text-align: center;
-  color: #474747; }
-
-.agregar {
-  text-decoration: none;
-  background: #f7aa05;
-  color: #3b3a3a;
-  font-size: 0.8rem;
-  padding: 5px 10px;
-  border-radius: 5px;
-  margin-left: 8px;
-  cursor: pointer; }
+  color: #6e6a6a; }
 
 .precios-outlet {
   font-size: 1.2rem;
   text-align: center;
-  color: #3D3C3C;
+  color: #f71b13;
   text-align: center;
   font-size: 1.5rem; }
 
@@ -454,7 +448,7 @@ form {
 
 @media only screen and (min-width: 1280px) {
   .contenedor {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 0.9fr 0.9fr 0.9fr;
     grid-template-rows: 0.5fr 4fr 0.5fr;
     grid-template-areas: "cabecera cabecera cabecera" "datos datos datos" "pie pie pie"; }
   .contenedorProductos {

@@ -9,6 +9,13 @@
   text-align: center;
 }
 
+.whatsapp{
+	float: right;
+	position: fixed;
+	right: 10px;
+	bottom: 10px;
+	width: 3%;
+}
 .rrss__img--sm{
 	width: 2em;
 	float:right;
@@ -25,17 +32,12 @@
 	float:inherit;
 	color: $ctcaja;
 	background-color:$cbody;
-	padding: $pstandar 10%;
-	border-bottom: #a7a2a2 2px solid;
-	border-left: #a7a2a2 2px solid;
-	border-right: #a7a2a2 2px solid;
+	padding: $pstandar;
 }
 .descripcion{
 	text-align: center;
 	font-size: $fs;
 }
-
-
 .datos{ 
 	grid-area: datos;
 	display: flex;
@@ -89,25 +91,15 @@
 }
 .cajaProductos__text--grey{
 	@include text-info;
-	color: #474747;
-}
-
-.agregar{
-	text-decoration: none;
-	background:rgb(247, 170, 5);
-	color:rgb(59, 58, 58);
-	font-size:$fs;
-	padding: 5px 10px ;
-	border-radius: 5px;
-	margin-left: 8px;
-	cursor:pointer;
+	color: #6e6a6a;
 }
 .precios-outlet{
 	@include text-info;
-	color: #3D3C3C;
+	color: #f71b13;
 	text-align: center;
 	font-size: $fb;
 }
+
 form{
 margin:auto;
 justify-content: center;
