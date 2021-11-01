@@ -39,8 +39,8 @@ function saludo() {
     let hora = fecha.getHours();
     let texto;
 
-    if (hora >= 0 && hora < 4) texto = "Buenos Días";
-    if (hora >= 4 && hora < 18) texto = "Buenas Tardes";
+    if (hora >= 0 && hora < 12) texto = "Buenos Días";
+    if (hora >= 12 && hora < 18) texto = "Buenas Tardes";
     if (hora >= 18 && hora < 24) texto = "Buenas Noches";
     return (texto);
 }
