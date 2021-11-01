@@ -33,46 +33,55 @@ const productos = [{
     },
 
 ];
+
+function saludo() {
+    fecha = new Date();
+    let hora = fecha.getHours();
+    let texto;
+
+    if (hora >= 0 && hora < 4) texto = "Buenos Días";
+    if (hora >= 4 && hora < 18) texto = "Buenas Tardes";
+    if (hora >= 18 && hora < 24) texto = "Buenas Noches";
+    return (texto);
+}
+
+
+//Variable Operaciones
 let total = 0;
 let carro = [];
-
-
-// function Esconder() {
-//     alert("producto escondido");
-//     location.href = "/../index.html"
-//     setTimeout("r()", 1000);
-// }
-
-
-let tituloTotalCompra = document.createElement("h1");
-tituloTotalCompra.innerText = `Total de la compra $: `;
-document.body.appendChild(tituloTotalCompra);
-
+let nombre = prompt("Ingrese su nombre");
+let saludos = saludo();
+let bienvenida = document.createElement("h1");
+bienvenida.innerText = saludos + " " + nombre;
+let tituloTotalCompra = document.createElement("h2");
 let tituloPrecio = document.createElement("h1");
+tituloTotalCompra.innerText = "Total de la compra $:";
+
+//imprimir en html
+document.body.appendChild(bienvenida);
+document.body.appendChild(tituloTotalCompra);
 document.body.appendChild(tituloPrecio);
+
 
 let tituloTotalUnidades = document.createElement("h3");
 tituloTotalUnidades.innerText = "0";
 let Cantidad = document.createElement("h2");
 Cantidad.innerText = "Cantidad de productos en el carro:";
 document.body.appendChild(Cantidad);
-
-
 document.body.appendChild(tituloTotalUnidades);
 
-
 for (const producto of productos) {
-    let contenedor = document.createElement("div");
+    let section = document.createElement("section");
     //Definimos el innerHTML del elemento con una plantilla para mostrar todos los productos
     if ((producto.stock >= 1) && (producto.estado == "Activo")) {
-        contenedor.innerHTML = ` <section id = "${productos.claseCSS}"class = "cajaProductos">
+        section.innerHTML = ` <section id = "${productos.claseCSS}"class = "cajaProductos">
         <h1 class = "cajaProductos__title--orange" > ${ producto.categoria } </h1> 
         <div class = "productos" ><img src = "${producto.foto}"alt = "Maceteros Cuadrados Altos" >
         <h3 class = "cajaProductos__text--grey" > ${ producto.nombre } </h3> <br >
         <p > ${producto.descripcion } </p> <h2 class = "precios-outlet" > ${ producto.precio }</h2> 
         <button id = "${producto.id}" > COMPRAR </button><br> 
         <button id = "${producto.estado}"> Desactivar </button><br>`;
-        document.body.appendChild(contenedor);
+        document.body.appendChild(section);
         document.getElementById(`${producto.id}`).onclick = () => agregarAlCarro(`${producto.id}`);
         // document.getElementById(`${producto.estado}`).onclick = () => Esconder(`${producto.estado="Desactivado"}`);
 
@@ -86,7 +95,7 @@ function agregarAlCarro(id) {
 
 
 function CalcularTotal() {
-
+    total = 0;
     for (const prod of carro) {
         total += prod.precio;
     }
