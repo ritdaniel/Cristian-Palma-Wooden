@@ -14,6 +14,7 @@
     <meta name="author" content="Cristian Palma">
     <!-- Bootstrap CSS -->
     <link rel="icon" href="icono/icon.jpg" type="image/jpg" />
+
 </head>
 
 <body>
@@ -86,7 +87,22 @@
         <!-- Fin menu izquierdo -->
         <!-- comienzo contenido -->
         <div class="datos">
-            <script src="js/carrito.js"></script>
+            <!-- Generamos un template para ir mostrando los productos -->
+            <template id="templateOutlet">
+                <section  class="cajaProductos">
+                    <h1 class="cajaProductos__title--orange" ></h1>
+                    <div>
+                        <img>
+                        <h3 class="cajaProductos__text--grey"></h3>
+                        <p></p>
+                        <h2 class="precios-outlet"></h2>
+                        <br>
+                        <button >&nbsp; &nbsp;COMPRAR &nbsp; &nbsp;</button>
+                        <label></label>
+                        <imput type="checkbox"><br>
+                    </div>
+                </section>
+            </template>
         </div>
     </div>
 
@@ -123,6 +139,7 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+    <script src="js/carrito.js" type="module"></script>
 </body>
 
 </html>
