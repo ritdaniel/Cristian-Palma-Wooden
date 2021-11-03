@@ -88,12 +88,24 @@
         <!-- comienzo contenido -->
         <div class="datos">
             <!-- Generamos un template para ir mostrando los productos -->
-            <template id="templateCarro">
-                <h4 ></h4>
-                <h5 id="montoCompra"></h5>
-                <h6 id="cantidadProductos"></h5>
-            </template>
-
+            <table id="tabla" >
+              
+                <tr>
+                    <td WIDTH="70%"></td>
+                    <td><h5 id="saludoHtml"></h5></td>
+                </tr>
+                <tr>
+                    <td WIDTH="70%"></td>
+                    <td> <h6 >Monto total compra :</h6></td>
+                <td><h7 id="montoCompra"></h7></td>
+                </tr>
+                <tr>
+                    <td WIDTH="70%"></td>
+                    <td> <h6 >Cantidad de productos :</h6></td>
+                    <td><h7 id="cantidad"></h7></td>
+                </tr>
+             </table>
+                    
             <template id="templateOutlet">
                 <section  class="cajaProductos">
                     <h1 class="cajaProductos__title--orange" ></h1>
@@ -104,7 +116,9 @@
                         <h2 class="precios-outlet"></h2>
                         <br>
                         <button  type="button" >&nbsp; &nbsp;COMPRAR &nbsp; &nbsp;</button>
-                        <label ></label><input type="checkbox"><br>
+                        <label ></label>
+                        <input type="checkbox"><br>
+                        <h5 ></h5>
                     </div>
                 </section>
             </template>

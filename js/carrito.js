@@ -1,9 +1,44 @@
+const produc = [{
+    id: 1,
+    claseCSS: "producMaceteros",
+    categoria: "Maceteros Cuadrados",
+    nombre: "Macetero Cuadrado Alto",
+    foto: "img/cuadradoalto.png",
+    descripcion: "Macetero alargado 50cm alto x 18cm ancho.",
+    precio: 15990,
+    stock: 15,
+    estado: "Desactivado"
+},
+{
+    id: 2,
+    claseCSS: "producRepisa",
+    categoria: "Repisas",
+    nombre: "Repisa Hexagonal",
+    foto: "img/repisaout.png",
+    descripcion: "Medidas: 50 centímetros de alto, 57 de ancho y 12 de profundidad..",
+    precio: 14990,
+    stock: 10,
+    estado: "Activo"
+},
+{
+    id: 3,
+    claseCSS: "producJardinera",
+    categoria: "Jardinera",
+    nombre: "Jardinera Piso",
+    foto: "img/jardineraoutlet.png",
+    descripcion: "Medidas: 40 centímetros de alto, 50 de ancho y 25 de profundidad.",
+    precio: 24990,
+    stock: 3,
+    estado: "Activo"
+},
+
+];
 let total = 0;
 let unidades = 0;
 let carro = [];
 let usuario = "";
-
-
+let stock=0;
+// Funcion saludo solicita el nombre y retorna el saludo dependiendo de la hora
 function saludo() {
     let fecha = new Date();
     let hora = fecha.getHours();
@@ -16,83 +51,41 @@ function saludo() {
     return (saludoBienvenida);
 };
 
+// Funcion para Agregar producto al carro
 function agregarAlCarro(id) {
-    carro.push(produc[id - 1].precio, produc[id - 1].nombre);
-    alert("Se Agrego Producto al carro: " + produc[id - 1].nombre + ".  $: " + produc[id - 1].precio);
-    CalcularTotal();
+    stock=produc[id-1].stock - 1;
+    carro.push(produc[id-1]);
+    produc[id-1].stock = stock;
+    alert("Se Agrego Producto al carro: " + produc[id-1].nombre + ".  $: " + produc[id-1].precio);
+    Calcular();
+    
 }
 
-function CalcularTotal() {
-    total = 0;
-    for (const productos of carro) {
-        total += productos.precio;
-    }
-    tituloPrecio.innerText = total;
-    tituloTotalUnidades.innerText = carrito.length;
-}
+
+// llamamos a Funcion Saludo 
 let saludoUsuario = saludo();
 
+// creamos el elemento saludar para poder imprimir dentro del id correspondiente
+let saludar = document.getElementById("saludoHtml");
+saludar.style.textAlign= "right"; // agregamos estilo (texto al lado derecho)
+saludar.innerText = saludoUsuario;
 
-let tituloTotalCompra = document.createElement("h3");
-tituloTotalCompra.innerText = "Total de la compra $:";
-document.body.appendChild(tituloTotalCompra);
+// creamos el elemento tituloPrecio (valor acumilado de productos en el carro) para poder imprimir dentro del id correspondiente
+let tituloPrecio = document.getElementById("montoCompra");
+tituloPrecio.style.textAlign= "right"; // agregamos estilo (texto al lado derecho)
+tituloPrecio.innerText = "0";
 
-let tituloTotalUnidades = document.createElement("h3");
+// creamos el elemento tituloTotalUnidades (cantidad productos en el carro) para poder imprimir dentro del id correspondiente    
+let tituloTotalUnidades = document.getElementById("cantidad");
+tituloTotalUnidades.style.textAlign= "right"; // agregamos estilo (texto al lado derecho)
 tituloTotalUnidades.innerText = "0";
-document.body.appendChild(tituloTotalUnidades);
 
-
+// creamos el elemento tituloTotalUnidades (cantidad productos en el carro) para poder imprimir dentro del id correspondiente    
 
 const $datos = document.querySelector(".datos"),
     $template = document.getElementById("templateOutlet").content,
     $fragment = document.createDocumentFragment();
 
-const $datos2 = document.querySelector(".datos"),
-    $templateCarro = document.getElementById("templateCarro").content,
-    $fragmentCarro = document.createDocumentFragment();
-
-$templateCarro.querySelector("h4").textContent = saludoUsuario;
-$templateCarro.querySelector("h5").textContent = "Total de la compra $:";
-$templateCarro.querySelector("h6").textContent = "Cantidad de productos en el carro:";
-let $clone2 = document.importNode($templateCarro, true); // clonamos completamente el nodo templetcon toda la estructura 
-$fragmentCarro.appendChild($clone2);
-$datos.appendChild($fragmentCarro);
-
-const produc = [{
-        id: 1,
-        claseCSS: "producMaceteros",
-        categoria: "Maceteros Cuadrados",
-        nombre: "Macetero Cuadrado Alto",
-        foto: "img/cuadradoalto.png",
-        descripcion: "Macetero alargado 50cm alto x 18cm ancho.",
-        precio: 15990,
-        stock: 15,
-        estado: "Desactivado"
-    },
-    {
-        id: 2,
-        claseCSS: "producRepisa",
-        categoria: "Repisas",
-        nombre: "Repisa Hexagonal",
-        foto: "img/repisaout.png",
-        descripcion: "Medidas: 50 centímetros de alto, 57 de ancho y 12 de profundidad..",
-        precio: 14990,
-        stock: 10,
-        estado: "Activo"
-    },
-    {
-        id: 3,
-        claseCSS: "producJardinera",
-        categoria: "Jardinera",
-        nombre: "Jardinera Piso",
-        foto: "img/jardineraoutlet.png",
-        descripcion: "Medidas: 40 centímetros de alto, 50 de ancho y 25 de profundidad.",
-        precio: 24990,
-        stock: 3,
-        estado: "Activo"
-    },
-
-];
 
 // mostramos los productos Activados y si se ingresa admin se mostraran todos los produtos
 produc.forEach(element => {
@@ -106,8 +99,10 @@ produc.forEach(element => {
         $template.querySelector("h2").textContent = element.precio;
         $template.querySelector("button").setAttribute("id", element.id);
         $template.querySelector("button").setAttribute("value", element.id);
+        $template.querySelector("input").style.visibility="hidden"; // se deja oculto el checkbox cuando no es admin
         if (usuario === "admin") {
-            $template.querySelector("button").setAttribute("disabled", true);
+            $template.querySelector("button").setAttribute("disabled", true); // se desabilita boton de compra
+            $template.querySelector("input").style.visibility="visible"; // se habilita checkbox modificar estado
             if (element.estado === "Activo") {
                 $template.querySelector("label").textContent = "Desactivar";
                 $template.querySelector("label").setAttribute("value", "Desactivar");
@@ -117,6 +112,7 @@ produc.forEach(element => {
                 $template.querySelector("label").setAttribute("value", "Desactivar");
             }
         }
+            $template.querySelector("h5").textContent = "Stock disponible: "+ element.stock;
 
         let $clone = document.importNode($template, true); // clonamos completamente el nodo templetcon toda la estructura 
         $fragment.appendChild($clone);
@@ -125,3 +121,21 @@ produc.forEach(element => {
 
     }
 });
+
+// realiza el calculo del carro  suma y cantidad de items
+function Calcular() {
+    
+    total = 0;
+    carro.forEach(element => {
+        total += element.precio;
+    }); 
+    tituloPrecio.innerText = total;
+    tituloTotalUnidades.innerText = carro.length;
+}
+
+// se realiza Impresion en el html
+saludar.appendChild(saludar);
+
+tituloPrecio.appendChild(tituloPrecio);
+tituloTotalUnidades.appendChild(tituloTotalUnidades);
+
