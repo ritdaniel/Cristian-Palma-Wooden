@@ -88,6 +88,12 @@
         <!-- comienzo contenido -->
         <div class="datos">
             <!-- Generamos un template para ir mostrando los productos -->
+            <template id="templateCarro">
+                <h4 ></h4>
+                <h5 id="montoCompra"></h5>
+                <h6 id="cantidadProductos"></h5>
+            </template>
+
             <template id="templateOutlet">
                 <section  class="cajaProductos">
                     <h1 class="cajaProductos__title--orange" ></h1>
@@ -97,9 +103,8 @@
                         <p></p>
                         <h2 class="precios-outlet"></h2>
                         <br>
-                        <button >&nbsp; &nbsp;COMPRAR &nbsp; &nbsp;</button>
-                        <label></label>
-                        <imput type="checkbox"><br>
+                        <button  type="button" >&nbsp; &nbsp;COMPRAR &nbsp; &nbsp;</button>
+                        <label ></label><input type="checkbox"><br>
                     </div>
                 </section>
             </template>
