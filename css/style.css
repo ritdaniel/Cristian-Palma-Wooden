@@ -345,11 +345,30 @@ form {
   width: 8%;
   margin-right: 7px; }
 
+.carritocompra {
+  width: 4%;
+  margin-right: 7px; }
+
+.CantidadCarro {
+  size: 20px;
+  color: cornsilk;
+  text-decoration-style: solid;
+  padding-left: 1%;
+  padding-right: 1%;
+  padding-bottom: 5px;
+  padding-top: 2px;
+  text-align: center;
+  background-image: url(../icono/circulo.png);
+  background-size: 95%;
+  background-repeat: no-repeat;
+  display: inline-block; }
+
 .foter__title--grey {
   color: #2B2B2B;
   font-size: 1.2rem; }
 
-.footer-left, .footer-right {
+.footer-left,
+.footer-right {
   margin-top: 5px;
   width: 95%;
   display: inline-block;
