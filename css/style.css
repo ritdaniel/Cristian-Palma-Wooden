@@ -124,20 +124,29 @@ body {
 .contenedor {
   display: grid;
   grid-template-columns: repeat(1, 3fr);
-  grid-template-rows: 0.4fr 2.9fr  0.2fr;
+  grid-template-rows: 0.4fr 2.9fr 0.2fr;
   grid-template-areas: "cabecera" "datos" "pie"; }
 
 .contenedorProductos {
   display: grid;
   grid-template-columns: repeat(1, 4fr);
-  grid-template-rows: 0.1fr 0.2fr 5.5fr  0.4fr;
+  grid-template-rows: 0.1fr 0.2fr 5.5fr 0.4fr;
   grid-template-areas: "cabecera" "menuLateral" "datos" "pie"; }
+
+.contenedorCarro {
+  display: grid;
+  grid-template-columns: repeat(1, 4fr);
+  grid-template-rows: 0.1fr 5.5fr 0.2fr 0.4fr;
+  grid-template-areas: "cabecera" "datos" "carroCompra" "pie"; }
 
 .cabecera {
   grid-area: cabecera; }
 
 .menuLateral {
   grid-area: menuLateral; }
+
+.carroCompra {
+  grid-area: carroCompra; }
 
 .datos {
   grid-area: datos; }
@@ -321,6 +330,12 @@ form {
   background-color: rgba(248, 244, 241, 0.301);
   padding: 10px; }
 
+.imgCarro {
+  width: 90%;
+  border-radius: 15px;
+  margin: 5%;
+  border: 1px double #313131; }
+
 .footer {
   background-color: rgba(248, 244, 241, 0.301);
   display: flex;
@@ -345,23 +360,20 @@ form {
   width: 8%;
   margin-right: 7px; }
 
-.carritocompra {
-  width: 4%;
-  margin-right: 7px; }
+.contienecarro {
+  width: 6%;
+  background-image: url(../icono/carro.svg);
+  background-size: 55%;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  display: flex; }
 
 .CantidadCarro {
-  size: 20px;
   color: cornsilk;
-  text-decoration-style: solid;
-  padding-left: 1%;
-  padding-right: 1%;
-  padding-bottom: 5px;
-  padding-top: 2px;
-  text-align: center;
   background-image: url(../icono/circulo.png);
-  background-size: 95%;
+  background-size: 200%;
   background-repeat: no-repeat;
-  display: inline-block; }
+  display: flex; }
 
 .foter__title--grey {
   color: #2B2B2B;
@@ -386,11 +398,15 @@ form {
   .contenedor {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 0.5fr 5fr 0.5fr;
-    grid-template-areas: "cabecera cabecera cabecera" "datos datos datos" "pie pie pie"; }
+    grid-template-areas: "cabecera cabecera cabecera" "datos datos datos" "pie pie pie"; }
   .contenedorProductos {
     grid-template-columns: 1.2fr 3.5fr 3.5fr;
     grid-template-rows: 0.3fr 6fr 0.2fr;
-    grid-template-areas: "cabecera cabecera cabecera" "menuLateral datos datos" "pie pie pie"; }
+    grid-template-areas: "cabecera cabecera cabecera" "menuLateral datos datos" "pie pie pie"; }
+  .contenedorCarro {
+    grid-template-columns: 3.5fr 3.5fr 1.2fr;
+    grid-template-rows: 0.3fr 6fr 0.2fr;
+    grid-template-areas: "cabecera cabecera cabecera" "datos datos carroCompra" "pie pie pie"; }
   .dropdown li a:hover {
     background-color: #f7d265;
     transform: scale(1.1); }
@@ -432,17 +448,51 @@ form {
     position: fixed;
     right: 10px;
     bottom: 10px;
-    width: 3%; } }
+    width: 3%; }
+  .mostrandoCarro {
+    background-color: #CCC;
+    margin-left: 0px;
+    width: 95%;
+    height: 20%;
+    display: flex;
+    justify-content: space-between; }
+  .contenidoImg {
+    width: 12%;
+    margin: 2px; }
+  .contenidoInfo {
+    width: 20%;
+    float: left;
+    margin: 3px;
+    padding-top: 1%; }
+  .contenidoCant {
+    width: 12%;
+    float: left;
+    margin: 3px;
+    padding-top: 4%; }
+  .contenidoValor {
+    width: 12%;
+    float: left;
+    margin: 3px;
+    padding-top: 4%; }
+  .contenidoTotal {
+    width: 18%;
+    float: left;
+    margin: 3px;
+    padding-top: 4%; } }
 
 @media only screen and (min-width: 1024px) {
   .contenedor {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 0.5fr 4fr 0.5fr;
-    grid-template-areas: "cabecera cabecera cabecera" "datos datos datos" "pie pie pie"; }
+    grid-template-areas: "cabecera cabecera cabecera" "datos datos datos" "pie pie pie"; }
   .contenedorProductos {
     grid-template-columns: 1.5fr 3.5fr 3.5fr;
     grid-template-rows: 0.3fr 6fr 0.2fr;
-    grid-template-areas: "cabecera cabecera cabecera" "menuLateral datos datos" "pie pie pie"; }
+    grid-template-areas: "cabecera cabecera cabecera" "menuLateral datos datos" "pie pie pie"; }
+  .contenedorCarro {
+    grid-template-columns: 3.5fr 3.5fr 1.5fr;
+    grid-template-rows: 0.3fr 6fr 0.2fr;
+    grid-template-areas: "cabecera cabecera cabecera" "datos datos carroCompra" "pie pie pie"; }
   .dropdownli a:hover {
     background-color: #f7d265; }
   .navbar ul li a:hover:not(.actual) {
@@ -475,11 +525,15 @@ form {
   .contenedor {
     grid-template-columns: 0.9fr 0.9fr 0.9fr;
     grid-template-rows: 0.5fr 4fr 0.5fr;
-    grid-template-areas: "cabecera cabecera cabecera" "datos datos datos" "pie pie pie"; }
+    grid-template-areas: "cabecera cabecera cabecera" "datos datos datos" "pie pie pie"; }
   .contenedorProductos {
     grid-template-columns: 1.5fr 3.5fr 3.5fr;
     grid-template-rows: 0.3fr 6fr 0.2fr;
-    grid-template-areas: "cabecera cabecera cabecera" "menuLateral datos datos" "pie pie pie"; }
+    grid-template-areas: "cabecera cabecera cabecera" "menuLateral datos datos" "pie pie pie"; }
+  .contenedorCarro {
+    grid-template-columns: 3.5fr 3.5fr 1.5fr;
+    grid-template-rows: 0.3fr 6fr 0.2fr;
+    grid-template-areas: "cabecera cabecera cabecera" "datos datos carroCompra" "pie pie pie"; }
   .dropdownli a:hover {
     background-color: #f7d265; }
   .navbar ul li a:hover:not(.actual) {

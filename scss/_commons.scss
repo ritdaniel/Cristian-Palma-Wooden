@@ -1,5 +1,4 @@
 // variables Navbar
-
 $cpnav:rgb(255, 102, 0);
 $csnav:rgba(224, 158, 34, 0.808);
 $cfooter:rgba(248, 244, 241, 0.301);
@@ -8,54 +7,72 @@ $wlogo:180px;
 $fontnav:$fmedio;
 $pstandar:5px;
 $pdoble:10px;
-
 // variables body
 $maxbody: 98%;
-
-@for $padding from 1 through 7{
-	.ptext-#{$padding}{padding:1px * $padding;}
+@for $padding from 1 through 7 {
+    .ptext-#{$padding} {
+        padding: 1px * $padding;
+    }
 }
 
-@for $width from 1 through 20{
-	.w-#{$width *5}
-	{width: 5% * $width;}
+@for $width from 1 through 20 {
+    .w-#{$width *5} {
+        width: 5% * $width;
+    }
 }
 
-body{
-  background-image:url(../icono/fondow1.jpg) ;
-  background-size:cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  width: $maxbody;
-  margin: auto;
-}
-.contenedor{
-	display: grid;
-	grid-template-columns: repeat(1, 3fr);
-	grid-template-rows: 0.4fr 2.9fr  0.2fr;
-	grid-template-areas:"cabecera" "datos" "pie";
-} 
-.contenedorProductos{
-	display: grid;
-	grid-template-columns: repeat(1, 4fr);
-	grid-template-rows: 0.1fr 0.2fr 5.5fr  0.4fr;
-	grid-template-areas:"cabecera" "menuLateral" "datos" "pie";
-} 
-.cabecera{ 
-	grid-area: cabecera;
-}
-.menuLateral{
-	grid-area: menuLateral;
-}
-.datos{
-	grid-area: datos;
-}
-.pie{
-	grid-area: pie;
+body {
+    background-image: url(../icono/fondow1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: $maxbody;
+    margin: auto;
 }
 
-.text-black-100{
-	background-color: #f8f6f1;
-    display: inline-block; 
-	padding: 5px;
+.contenedor {
+    display: grid;
+    grid-template-columns: repeat(1, 3fr);
+    grid-template-rows: 0.4fr 2.9fr 0.2fr;
+    grid-template-areas: "cabecera" "datos" "pie";
+}
+
+.contenedorProductos {
+    display: grid;
+    grid-template-columns: repeat(1, 4fr);
+    grid-template-rows: 0.1fr 0.2fr 5.5fr 0.4fr;
+    grid-template-areas: "cabecera" "menuLateral" "datos" "pie";
+}
+
+.contenedorCarro {
+    display: grid;
+    grid-template-columns: repeat(1, 4fr);
+    grid-template-rows: 0.1fr 5.5fr 0.2fr 0.4fr;
+    grid-template-areas: "cabecera" "datos" "carroCompra" "pie";
+}
+
+.cabecera {
+    grid-area: cabecera;
+}
+
+.menuLateral {
+    grid-area: menuLateral;
+}
+
+.carroCompra {
+    grid-area: carroCompra;
+}
+
+.datos {
+    grid-area: datos;
+}
+
+.pie {
+    grid-area: pie;
+}
+
+.text-black-100 {
+    background-color: #f8f6f1;
+    display: inline-block;
+    padding: 5px;
 }

@@ -14,10 +14,11 @@
     <meta name="author" content="Cristian Palma">
     <!-- Bootstrap CSS -->
     <link rel="icon" href="icono/icon.jpg" type="image/jpg" />
+
 </head>
 
 <body>
-    <div class="contenedorProductos">
+    <div class="contenedorCarro">
         <div class="cabecera">
             <!--////////////////////////////   NAV  //////////////////////////////-->
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -32,7 +33,7 @@
                                 <a class="nav-link " aria-current="page" href="index.html">Inicio</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle " href="productos.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" href="productos.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 									Productos</a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <li><a class="dropdown-item" href="productos.html#maceteros">Maceteros</a></li>
@@ -42,11 +43,11 @@
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle active" href="outlet.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Outlet</a>
+                                <a class="nav-link dropdown-toggle" href="outlet.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Outlet</a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="#producMaceteros">Maceteros</a></li>
-                                    <li><a class="dropdown-item" href="#producRepisa">Repisas</a></li>
-                                    <li><a class="dropdown-item" href="#producJardinera">Jardinera</a></li>
+                                    <li><a class="dropdown-item" href="outlet.html#producMaceteros">Maceteros</a></li>
+                                    <li><a class="dropdown-item" href="outlet.html#producRepisa">Repisas</a></li>
+                                    <li><a class="dropdown-item" href="outlet.html#producJardinera">Jardinera</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item">
@@ -60,11 +61,11 @@
                             <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
                             <button class="btn btn-outline-secondary " type="submit">Buscar</button>
                         </form>
+                        <a href="carro.html">
+                            <span class="CantidadCarro" id="cantidad"></span>
+                            <img src="icono/carro.svg" class="carritocompra" alt="Ver Carro"></a>
                     </div>
                 </div>
-                <a class="navbar contienecarro" href="carro.html">
-                    <span class="navbar CantidadCarro" id="Cantidad">  </span>
-                    <!--<img src="icono/carro.svg" class="carritocompra" alt="Ver Carro"></a>--></a>
             </nav>
             <!-- termina el navbar-->
             <!-- Redes sociales -->
@@ -73,95 +74,69 @@
                     <img class="rrss__img--sm " src="icono/insta.png" alt="Instagram Wooden"></a>
                 <a href="https://www.facebook.com/maceteroswooden-107044031129727/">
                     <img class="rrss__img--sm " src="icono/face.png" alt="Facebook Wooden"></a>
-                <h1 class=" datos__title--tprincipal tit"> Outlet </h1>
+                <h1 class=" datos__title--tprincipal tit"> Carro de Compra</h1>
             </div>
         </div>
-        <!----------------- Menu izquierdo--------------->
-        <div class="menuLateral">
-            <nav>
-                <ul>
-                    <li><a href="#producMaceteros">Maceteros</a></li>
-                    <li><a href="#producRepisa">Repisas</a></li>
-                    <li><a href="#producJardinera">Jardineras</a></li>
-                </ul>
-            </nav>
-        </div>
-        <!-- Fin menu izquierdo -->
-        <!-- comienzo contenido -->
-        <div class="datos">
+        <!----------------- Muestra el listado de productos--------------->
+        <div class="datos " id="listado">
             <!-- Generamos un template para ir mostrando los productos -->
-            <table id="tabla">
-                <tr>
-                    <td WIDTH="70%"></td>
-                    <td>
-                        <h5 id="saludoHtml"></h5>
-                    </td>
-                </tr>
-                <tr>
-                    <td WIDTH="70%"></td>
-                    <td>
-                        <h6>Monto total compra :</h6>
-                    </td>
-                    <td>
-                        <h7 id="montoCompra"></h7>
-                    </td>
-                </tr>
-            </table>
 
-            <template id="templateOutlet">
-                <section  class="cajaProductos">
-                    <h1 class="cajaProductos__title--orange" ></h1>
-                    <div>
-                        <img>
-                        <h3 class="cajaProductos__text--grey"></h3>
-                        <p></p>
-                        <h2 class="precios-outlet"></h2>
-                        <button  type="button" >&nbsp; &nbsp;COMPRAR &nbsp; &nbsp;</button>
-                        <br><h6 id="nueva"></h6>
-                        <label ></label>
-                        <input type="checkbox"><br>
-                        
-                    </div>
-                </section>
-            </template>
         </div>
+        <!----------------- datos del total compra--------------->
+        <div class="CarroCompra" id="descripcionTotal">
+            <div>
+                <div id="limpiarCarro">
+                </div>
+                <div>
+                    <span>Sub total</span>
+                    <span>$ </span>
+                </div>
+                <div>
+                    <span>Total a pagar </span>
+                    <span id="montoCompra">$</span>
+                </div>
+                <button>Continuar</button>
+            </div>
+        </div>
+    </div>
     </div>
 
     <!--    fin contenido -->
-    <a href="https://wa.me/56995913119">
-        <img class="whatsapp" src="icono/whatsapp-logo.png" alt="Contactanos">
+    <a href="https://wa.me/56995913119 ">
+        <img class="whatsapp " src="icono/whatsapp-logo.png " alt="Contactanos ">
     </a>
-    <div class="pie">
-        <div class="pie">
-            <footer class="footer">
-                <div class="footer-left">
-                    <img class="img-footer" src="icono/logo.jpg" alt="Wooden">
-                    <p class="footer-links">
-                        <a href="index.html">Home</a> I
-                        <a href="productos.html">Productos</a> I
-                        <a href="Outlet.html">Outlet</a> I
-                        <a href="nosotros.html">Nosotros</a> I
-                        <a href="contactanos.html">Contacto</a> I <br> WOODEN © 2020 </p>
+    <div class="pie ">
+        <div class="pie ">
+            <footer class="footer ">
+                <div class="footer-left ">
+                    <img class="img-footer " src="icono/logo.jpg " alt="Wooden ">
+                    <p class="footer-links ">
+                        <a href="index.html ">Home</a> I
+                        <a href="productos.html ">Productos</a> I
+                        <a href="Outlet.html ">Outlet</a> I
+                        <a href="nosotros.html ">Nosotros</a> I
+                        <a href="contactanos.html ">Contacto</a> I <br> WOODEN © 2020 </p>
                 </div>
-                <div class="footer-right">
+                <div class="footer-right ">
                     <br>
                     <div>
-                        <P><img class="icono" src="icono/mapa.png" alt="Ubicacion"> Gaete Barrio Norte Concepcion, Chile</p>
+                        <P><img class="icono " src="icono/mapa.png " alt="Ubicacion "> Gaete Barrio Norte Concepcion, Chile</p>
                     </div>
                     <div>
-                        <P><img class="icono" src="icono/telefono.svg" alt="Telefono"> +56 9 9591 3119 </P>
+                        <P><img class="icono " src="icono/telefono.svg " alt="Telefono "> +56 9 9591 3119 </P>
                     </div>
                     <div>
-                        <p><img class="icono" src="icono/email.png" alt="Email"><a href="mailto:contacto@wooden.cl">&nbsp;  Contacto@wooden.cl</a></p>
+                        <p><img class="icono " src="icono/email.png " alt="Email "><a href="mailto:contacto@wooden.cl ">&nbsp;  Contacto@wooden.cl</a></p>
                     </div>
                 </div>
             </footer>
         </div>
     </div>
-    <script src="js/carrito.js" type="module"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src=" js/compra.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js " integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js " integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/ " crossorigin="anonymous "></script>
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11 "></script>
 </body>
 
 </html>

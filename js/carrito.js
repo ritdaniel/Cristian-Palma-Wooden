@@ -1,54 +1,72 @@
-const produc = [{
-        id: 1,
-        claseCSS: "producMaceteros",
-        categoria: "Maceteros Cuadrados",
-        nombre: "Macetero Cuadrado Alto",
-        foto: "img/cuadradoalto.png",
-        descripcion: "Macetero alargado 50cm alto x 18cm ancho.",
-        precio: 15990,
-        stock: 15,
-        estado: "Desactivado"
-    },
-    {
-        id: 2,
-        claseCSS: "producRepisa",
-        categoria: "Repisas",
-        nombre: "Repisa Hexagonal",
-        foto: "img/repisaout.png",
-        descripcion: "Medidas: 50 centímetros de alto, 57 de ancho y 12 de profundidad..",
-        precio: 14990,
-        stock: 10,
-        estado: "Activo"
-    },
-    {
-        id: 3,
-        claseCSS: "producJardinera",
-        categoria: "Jardinera",
-        nombre: "Jardinera Piso",
-        foto: "img/jardineraoutlet.png",
-        descripcion: "Medidas: 40 centímetros de alto, 50 de ancho y 25 de profundidad.",
-        precio: 24990,
-        stock: 3,
-        estado: "Activo"
-    },
+class Producto {
+    constructor(id, claseCSS, categoria, nombre, foto, descripcion, precio, stock, estado) {
+        this.id = id;
+        this.claseCSS = claseCSS;
+        this.categoria = categoria;
+        this.nombre = nombre;
+        this.foto = foto;
+        this.descripcion = descripcion;
+        this.precio = precio;
+        this.stock = stock;
+        this.estado = estado;
+    }
+}
 
-];
+const produc = [];
+const producto1 = new Producto(
+    1,
+    'producMaceteros',
+    'Maceteros Cuadrados',
+    'Macetero Cuadrado Alto',
+    'img/cuadradoalto.png',
+    'Macetero alargado 50cm alto x 18cm ancho.',
+    15990,
+    15,
+    'Activo'
+);
+
+const producto2 = new Producto(
+    2,
+    'producRepisa',
+    'Repisas',
+    'Repisa Hexagonal',
+    "img/repisaout.png",
+    "Medidas: 50 centímetros de alto, 57 de ancho y 12 de profundidad..",
+    14990,
+    10,
+    "Activo"
+);
+
+const producto3 = new Producto(
+    3,
+    'producJardinera',
+    'Jardinera',
+    'Jardinera Piso',
+    'img/jardineraoutlet.png',
+    'Medidas: 40 centímetros de alto, 50 de ancho y 25 de profundidad.',
+    24990,
+    3,
+    'Activo'
+)
+
+produc.push(producto1, producto2, producto3);
+
 let total = 0;
 let unidades = 0;
 let carro = [];
 let usuario = "";
 let stock = 0;
+let saludos = "Buenas";
 
-
-// Funcion saludo solicita el nombre y retorna el saludo dependiendo de la hora
+// Funcion saludo depende de la hora
 function saludo() {
     let saludoBienvenida = "";
     let fecha = new Date();
     let hora = fecha.getHours();
     let horario;
     if (hora >= 0 && hora < 12) horario = "Buenos Días";
-    if (hora >= 12 && hora < 18) horario = "Buenas Tardes";
-    if (hora >= 18 && hora < 24) horarios = "Buenas Noches";
+    if (hora >= 12 && hora < 20) horario = "Buenas Tardes";
+    if (hora >= 20 && hora < 24) horarios = "Buenas Noches";
     Swal
         .fire({
             title: "Ingrese Su Nombre",
@@ -67,7 +85,7 @@ function saludo() {
     saludoBienvenida = horario + " " + usuario;
     return (saludoBienvenida);
 };
-
+// alert(usuario);
 // Funcion para Agregar producto al carro
 function agregarAlCarro(nuevoprod) {
     nuevoprod.stock = nuevoprod.stock - 1;
@@ -76,18 +94,18 @@ function agregarAlCarro(nuevoprod) {
     Calcular();
 
     Swal.fire({
-        title: nuevoprod.nombre + ' ingresado',
+        title: nuevoprod.nombre,
         text: 'Producto Ingresado al carro Exitosamente',
         imageUrl: nuevoprod.foto,
-        imageWidth: 200,
-        imageHeight: 200,
+        imageWidth: 150,
+        imageHeight: 150,
         imageAlt: nuevoprod.nombre,
     })
 
 }
 
 // llamamos a Funcion Saludo 
-let saludos = saludo();
+//let saludos = saludo();
 
 // creamos el elemento saludar para poder imprimir dentro del id correspondiente
 let Saludar = document.getElementById("saludoHtml");
@@ -101,8 +119,8 @@ tituloPrecio.style.textAlign = "right"; // agregamos estilo (texto al lado derec
 tituloPrecio.innerText = "0";
 
 // creamos el elemento tituloTotalUnidades (cantidad productos en el carro) para poder imprimir dentro del id correspondiente    
-let tituloTotalUnidades = document.getElementById("cantidad");
-tituloTotalUnidades.style.textAlign = "right"; // agregamos estilo (texto al lado derecho)
+let tituloTotalUnidades = document.getElementById("Cantidad");
+//tituloTotalUnidades.style.textAlign = "right"; // agregamos estilo (texto al lado derecho)
 tituloTotalUnidades.innerText = "0";
 
 // recuperamos el carro cuando la persona se cambio de pagina
@@ -133,7 +151,7 @@ produc.forEach(productos => {
         $template.querySelector("button").setAttribute("id", productos.id);
         $template.querySelector("button").setAttribute("value", productos.id);
         $template.querySelector("input").style.visibility = "hidden"; // se deja oculto el checkbox cuando no es admin
-        if (usuario === "admin") {
+        if (usuario == "admin") {
             $template.querySelector("button").setAttribute("disabled", true); // se desabilita boton de compra
             $template.querySelector("input").style.visibility = "visible"; // se habilita checkbox modificar estado
             if (element.estado === "Activo") {
@@ -169,7 +187,7 @@ function Calcular() {
 }
 
 // se realiza Impresion en el html
-Saludar.appendChild(Saludar);
-tituloPrecio.appendChild(tituloPrecio);
-tituloTotalUnidades.appendChild(tituloTotalUnidades);
+//Saludar.appendChild(Saludar);
+//tituloPrecio.appendChild(tituloPrecio);
+//tituloTotalUnidades.appendChild(tituloTotalUnidades);
 //Nueva.appendChild(Nueva);
