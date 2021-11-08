@@ -10,10 +10,11 @@ if (localStorage.getItem('carro')) {
 const contenedorCarro = document.getElementById('listado');
 
 function mostrarCarro(maceteros, contenedor) {
-    let totalAPagar = 0;
-    maceteros.forEach(productoCarro => {
-        totalAPagar = totalAPagar + productoCarro.total;
-        contenedor.innerHTML += `
+    if (maceteros.length > 0) {
+        let totalAPagar = 0;
+        maceteros.forEach(productoCarro => {
+            totalAPagar = totalAPagar + productoCarro.total;
+            contenedor.innerHTML += `
             <div class="mostrandoCarro cajaProductos" >
                 <div class="contenidoImg">
                     <a href ="" >
@@ -42,7 +43,8 @@ function mostrarCarro(maceteros, contenedor) {
                      <span> $${productoCarro.total} </span>
                 </div>
             </div>`;
-    });
+        });
+    } else contenedor.innerHTML = `carro vacio`;
     const limpiar = document.getElementById('limpiarCarro');
     limpiar.setAttribute('id', 'vaciar');
     limpiar.innerText = 'Vaciar Carro';
@@ -62,7 +64,9 @@ tituloPrecio.appendChild(tituloPrecio);
 function vaciarCarro() {
     carro = [];
     localStorage.setItem('carro', JSON.stringify(carro));
+    mostrarCarro(carro, contenedorCarro);
     Swal.fire(
         `carro vacio!!!`
     )
+
 }

@@ -69,7 +69,8 @@ let carro = [];
 let usuario;
 let stock = 0;
 let saludos = "";
-let cantidadProductos;
+let cantidadProductos = 0;
+
 
 // Funcion saludo depende de la hora
 function saludo() {
@@ -112,11 +113,10 @@ function agregarAlCarro(id, nuevoproducto) {
         actualizarProducto.cantidad++;
         actualizarProducto.total = actualizarProducto.cantidad * actualizarProducto.precio;
     } else {
-        const productoMejorado = new Carro(agregar.id, agregar.categoria, agregar.nombre, agregar.foto, agregar.descripcion, agregar.precio, 1, agregar.total);
+        const productoMejorado = new Carro(agregar.id, agregar.categoria, agregar.nombre, agregar.foto, agregar.descripcion, agregar.precio, 1, agregar.precio);
         carro.push(productoMejorado);
+        console.log(carro);
     }
-
-    console.log(carro)
     localStorage.setItem('carro', JSON.stringify(carro));
     Calcular();
     Swal.fire({
@@ -126,6 +126,7 @@ function agregarAlCarro(id, nuevoproducto) {
         imageWidth: 150,
         imageHeight: 150,
     });
+
 }
 
 
