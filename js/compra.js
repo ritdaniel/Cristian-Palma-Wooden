@@ -3,20 +3,16 @@ let unidades = 0;
 let carro = [];
 let stock = 0;
 
-// creamos el elemento tituloPrecio (valor acumilado de productos en el carro) para poder imprimir dentro del id correspondiente
-let tituloPrecio = document.getElementById("montoCompra");
-tituloPrecio.style.textAlign = "right"; // agregamos estilo (texto al lado derecho)
-tituloPrecio.innerText = "0";
-
 if (localStorage.getItem('carro')) {
     carro = JSON.parse(localStorage.getItem('carro'));
-    console.log(carro)
 }
 
 const contenedorCarro = document.getElementById('listado');
 
 function mostrarCarro(maceteros, contenedor) {
+    let totalAPagar = 0;
     maceteros.forEach(productoCarro => {
+        totalAPagar = totalAPagar + productoCarro.total;
         contenedor.innerHTML += `
             <div class="mostrandoCarro cajaProductos" >
                 <div class="contenidoImg">
@@ -32,18 +28,18 @@ function mostrarCarro(maceteros, contenedor) {
                 </div>
                 <div class="contenidoCant">
                     <button>&nbsp - &nbsp</button>
-                        <input type="text" minlength="1" maxlength="2" size="1" >
+                        <input type="text" minlength="1" maxlength="2" size="1" value="${productoCarro.cantidad}" >
                     <button>&nbsp + &nbsp</button>
                     <a> Eliminar </a>
                 </div>
                 <div class="contenidoValor">
                     <span> $ </span>
-                    <span> 4.220 </span>
+                    <span> ${productoCarro.precio}</span>
                     <span> C / U </span>
                  </div>
                 <div class="contenidoTotal">
                     <span>Total producto:</span> 
-                     <span> $4.220 </span>
+                     <span> $${productoCarro.total} </span>
                 </div>
             </div>`;
     });
@@ -52,10 +48,16 @@ function mostrarCarro(maceteros, contenedor) {
     limpiar.innerText = 'Vaciar Carro';
     document.getElementById('vaciar').addEventListener('click', vaciarCarro);
     limpiar.appendChild(limpiar);
+    let tituloPrecio = document.getElementById("montoCompra");
+    tituloPrecio.innerText = totalAPagar;
+    tituloPrecio.appendChild(tituloPrecio);
+
 }
 mostrarCarro(carro, contenedorCarro);
 
-
+let tituloPrecio = document.getElementById("montoCompra");
+tituloPrecio.innerText = totalAPagar;
+tituloPrecio.appendChild(tituloPrecio);
 
 function vaciarCarro() {
     carro = [];

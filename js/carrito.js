@@ -12,6 +12,18 @@ class Producto {
     }
 }
 
+class Carro {
+    constructor(id, categoria, nombre, foto, descripcion, precio, cantidad, total) {
+        this.id = id;
+        this.categoria = categoria;
+        this.nombre = nombre;
+        this.foto = foto;
+        this.descripcion = descripcion;
+        this.precio = precio;
+        this.cantidad = cantidad;
+        this.total = total;
+    }
+}
 const produc = [];
 const producto1 = new Producto(
     1,
@@ -54,9 +66,10 @@ produc.push(producto1, producto2, producto3);
 let total = 0;
 let unidades = 0;
 let carro = [];
-let usuario = "";
+let usuario;
 let stock = 0;
-let saludos = "Buenas";
+let saludos = "";
+let cantidadProductos;
 
 // Funcion saludo depende de la hora
 function saludo() {
@@ -66,46 +79,70 @@ function saludo() {
     let horario;
     if (hora >= 0 && hora < 12) horario = "Buenos Días";
     if (hora >= 12 && hora < 20) horario = "Buenas Tardes";
-    if (hora >= 20 && hora < 24) horarios = "Buenas Noches";
+    if (hora >= 20 && hora < 24) horario = "Buenas Noches";
     Swal
         .fire({
             title: "Ingrese Su Nombre",
             input: "text",
+            inputPlaceholder: 'Ingrese su nombre...',
             confirmButtonText: "OK",
             inputValidator: name => {
-                // Si el valor es válido, debes regresar undefined. Si no, una cadena
                 if (!name) {
                     return "Favor ingrese su Nombre";
                 } else {
                     usuario = name;
                     return undefined;
                 }
+
             }
+
         })
     saludoBienvenida = horario + " " + usuario;
     return (saludoBienvenida);
 };
 // alert(usuario);
 // Funcion para Agregar producto al carro
-function agregarAlCarro(nuevoprod) {
-    nuevoprod.stock = nuevoprod.stock - 1;
-    carro.push(nuevoprod);
+//id, categoria, nombre, foto, descripcion, precio, cantidad, total  este es el carro
 
+function agregarAlCarro(id, nuevoproducto) {
+    const agregar = nuevoproducto.find(productos => productos.id === parseInt(id));
+
+    if (carro.some(productos => productos.id === parseInt(id))) {
+        const actualizarProducto = carro.find(productos => productos.id === parseInt(id));
+        actualizarProducto.cantidad++;
+        actualizarProducto.total = actualizarProducto.cantidad * actualizarProducto.precio;
+    } else {
+        const productoMejorado = new Carro(agregar.id, agregar.categoria, agregar.nombre, agregar.foto, agregar.descripcion, agregar.precio, 1, agregar.total);
+        carro.push(productoMejorado);
+    }
+
+    console.log(carro)
+    localStorage.setItem('carro', JSON.stringify(carro));
     Calcular();
-
     Swal.fire({
         title: nuevoprod.nombre,
         text: 'Producto Ingresado al carro Exitosamente',
         imageUrl: nuevoprod.foto,
         imageWidth: 150,
         imageHeight: 150,
-        imageAlt: nuevoprod.nombre,
-    })
-
+    });
 }
 
+
+function Calcular() {
+    total = 0;
+    cantidadProductos = 0;
+    carro.forEach(element => {
+        total += element.total;
+        cantidadProductos = cantidadProductos + element.cantidad;
+    });
+    tituloPrecio.innerText = total;
+    tituloTotalUnidades.innerText = cantidadProductos;
+    // guardamos el carro localStorage cada vez que se agrega un producto para que no se pierda
+    localStorage.setItem('carro', JSON.stringify(carro));
+}
 // llamamos a Funcion Saludo 
-//let saludos = saludo();
+//saludos = saludo();
 
 // creamos el elemento saludar para poder imprimir dentro del id correspondiente
 let Saludar = document.getElementById("saludoHtml");
@@ -122,21 +159,17 @@ tituloPrecio.innerText = "0";
 let tituloTotalUnidades = document.getElementById("Cantidad");
 //tituloTotalUnidades.style.textAlign = "right"; // agregamos estilo (texto al lado derecho)
 tituloTotalUnidades.innerText = "0";
-
+console.log(" este es :" + saludos);
 // recuperamos el carro cuando la persona se cambio de pagina
 if (localStorage.getItem('carro')) {
     carro = JSON.parse(localStorage.getItem('carro'));
     tituloTotalUnidades.innerText = carro.length;
     Calcular();
 }
-// let Nueva = document.getElementById("nueva");
-// Nueva.innerText = "0";
-// creamos el elemento tituloTotalUnidades (cantidad productos en el carro) para poder imprimir dentro del id correspondiente    
 
 const $datos = document.querySelector(".datos"),
     $template = document.getElementById("templateOutlet").content,
     $fragment = document.createDocumentFragment();
-
 
 // mostramos los productos Activados y si se ingresa admin se mostraran todos los produtos
 produc.forEach(productos => {
@@ -168,23 +201,13 @@ produc.forEach(productos => {
         let $clone = document.importNode($template, true); // clonamos completamente el nodo templetcon toda la estructura 
         $fragment.appendChild($clone);
         $datos.appendChild($fragment);
-        document.getElementById(`${productos.id}`).onclick = () => agregarAlCarro(productos);
+        document.getElementById(`${productos.id}`).onclick = () => agregarAlCarro(`${productos.id}`, produc);
 
     }
 });
 
 // realiza el calculo del carro  suma y cantidad de items
-function Calcular() {
 
-    total = 0;
-    carro.forEach(element => {
-        total += element.precio;
-    });
-    tituloPrecio.innerText = total;
-    tituloTotalUnidades.innerText = carro.length;
-    // guardamos el carro localStorage cada vez que se agrega un producto para que no se pierda
-    localStorage.setItem('carro', JSON.stringify(carro));
-}
 
 // se realiza Impresion en el html
 //Saludar.appendChild(Saludar);
