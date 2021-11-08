@@ -1,16 +1,21 @@
+//================= declaracion de globales a Usar
 let total = 0;
 let unidades = 0;
 let carro = [];
 let stock = 0;
 
+//=================  recuperamos del storage el carro de compras guardado siempre que tenga informacion
 if (localStorage.getItem('carro')) {
     carro = JSON.parse(localStorage.getItem('carro'));
 }
 
+
+//================ comstruimos el elemento para mostrar en el HTML
 const contenedorCarro = document.getElementById('listado');
 
+////================ creamos la funcion para mostrar El carro que recibe el carro [] y el elemento
 function mostrarCarro(maceteros, contenedor) {
-    if (maceteros.length > 0) {
+    if (maceteros.length > 0) { //================ validamos que maceteros no este vacio (carro = macetero)
         let totalAPagar = 0;
         maceteros.forEach(productoCarro => {
             totalAPagar = totalAPagar + productoCarro.total;
@@ -44,29 +49,42 @@ function mostrarCarro(maceteros, contenedor) {
                 </div>
             </div>`;
         });
-    } else contenedor.innerHTML = `carro vacio`;
+        ////================ si esta vacio maceteros indicara que esta vacio el carro
+    } else contenedor.innerHTML = `
+    <div class="datos__title--tprincipal cajaProductos" >
+        <div>
+            <br>
+            <h3> Carro Vacio </h3>
+        </div>
+        <div >
+            <img src="icono/carro.svg" class="carro" >
+        </div>
+    </div>`;
+
+    ////============= construimos un elemento el cual sera boton y llamara a la funcion limpiarcarro    
     const limpiar = document.getElementById('limpiarCarro');
     limpiar.setAttribute('id', 'vaciar');
     limpiar.innerText = 'Vaciar Carro';
-    document.getElementById('vaciar').addEventListener('click', vaciarCarro);
+
+    document.getElementById('vaciar').addEventListener('click', vaciarCarro); // evento click llama a la funcion
     limpiar.appendChild(limpiar);
+
     let tituloPrecio = document.getElementById("montoCompra");
-    tituloPrecio.innerText = totalAPagar;
-    tituloPrecio.appendChild(tituloPrecio);
+    tituloPrecio.innerHTML = totalAPagar;
+    console.log("este es el total" + tituloPrecio);
+    //tituloPrecio.appendChild(limpiar);
 
 }
 mostrarCarro(carro, contenedorCarro);
 
-let tituloPrecio = document.getElementById("montoCompra");
-tituloPrecio.innerText = totalAPagar;
-tituloPrecio.appendChild(tituloPrecio);
-
 function vaciarCarro() {
     carro = [];
     localStorage.setItem('carro', JSON.stringify(carro));
+    Swal
+        .fire(
+            `carro vacio!!!`
+        )
     mostrarCarro(carro, contenedorCarro);
-    Swal.fire(
-        `carro vacio!!!`
-    )
+
 
 }

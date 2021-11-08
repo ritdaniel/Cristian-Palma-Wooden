@@ -112,20 +112,29 @@ function agregarAlCarro(id, nuevoproducto) {
         const actualizarProducto = carro.find(productos => productos.id === parseInt(id));
         actualizarProducto.cantidad++;
         actualizarProducto.total = actualizarProducto.cantidad * actualizarProducto.precio;
+        Swal.fire({
+            title: agregar.nombre,
+            text: `Producto se encuentra en el carro
+             se actualizara cantidad`,
+            imageUrl: agregar.foto,
+            imageWidth: 150,
+            imageHeight: 150,
+        })
+
     } else {
         const productoMejorado = new Carro(agregar.id, agregar.categoria, agregar.nombre, agregar.foto, agregar.descripcion, agregar.precio, 1, agregar.precio);
         carro.push(productoMejorado);
         console.log(carro);
+        Swal.fire({
+            title: agregar.nombre,
+            text: 'Producto Ingresado al carro Exitosamente',
+            imageUrl: agregar.foto,
+            imageWidth: 150,
+            imageHeight: 150,
+        });
     }
     localStorage.setItem('carro', JSON.stringify(carro));
     Calcular();
-    Swal.fire({
-        title: nuevoprod.nombre,
-        text: 'Producto Ingresado al carro Exitosamente',
-        imageUrl: nuevoprod.foto,
-        imageWidth: 150,
-        imageHeight: 150,
-    });
 
 }
 
