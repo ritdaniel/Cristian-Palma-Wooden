@@ -43,7 +43,7 @@ const producto2 = new Producto(
     'Repisas',
     'Repisa Hexagonal',
     "img/repisaout.png",
-    "Medidas: 50 centímetros de alto, 57 de ancho y 12 de profundidad..",
+    "Medidas: 50 cm de alto, 57 de ancho y 12 de profundidad.",
     14990,
     10,
     "Activo"
@@ -55,7 +55,7 @@ const producto3 = new Producto(
     'Jardinera',
     'Jardinera Piso',
     'img/jardineraoutlet.png',
-    'Medidas: 40 centímetros de alto, 50 de ancho y 25 de profundidad.',
+    'Medidas: 40 cm de alto, 50 de ancho y 25 de profundidad.',
     24990,
     3,
     'Activo'

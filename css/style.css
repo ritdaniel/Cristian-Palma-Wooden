@@ -16,10 +16,36 @@ a,
 li {
   font-family: "Barlow Semi Condensed"; }
 
-h6 {
-  font-family: "Barlow Semi Condensed";
-  size: 0.8rem;
+.fontCategoria {
+  size: 10px;
+  color: #6e6a6a; }
+
+.fontNombre {
+  size: 0.4rem;
+  color: #2e2d2d;
   font-weight: bold; }
+
+.fontDescripcion {
+  size: 0.2rem;
+  color: #6e6a6a; }
+
+h5 {
+  size: 0.4rem;
+  color: #6e6a6a; }
+
+.fontCategoria {
+  size: 0.4rem;
+  color: #6e6a6a; }
+
+.fontPrecio {
+  size: 0.8rem;
+  color: #131212;
+  text-align: center; }
+
+.fontPrecioUnitario {
+  size: 0.7rem;
+  color: #494848;
+  text-align: center; }
 
 select {
   font-family: "Barlow Semi Condensed";
@@ -185,10 +211,36 @@ a,
 li {
   font-family: "Barlow Semi Condensed"; }
 
-h6 {
-  font-family: "Barlow Semi Condensed";
-  size: 0.8rem;
+.fontCategoria {
+  size: 10px;
+  color: #6e6a6a; }
+
+.fontNombre {
+  size: 0.4rem;
+  color: #2e2d2d;
   font-weight: bold; }
+
+.fontDescripcion {
+  size: 0.2rem;
+  color: #6e6a6a; }
+
+h5 {
+  size: 0.4rem;
+  color: #6e6a6a; }
+
+.fontCategoria {
+  size: 0.4rem;
+  color: #6e6a6a; }
+
+.fontPrecio {
+  size: 0.8rem;
+  color: #131212;
+  text-align: center; }
+
+.fontPrecioUnitario {
+  size: 0.7rem;
+  color: #494848;
+  text-align: center; }
 
 select {
   font-family: "Barlow Semi Condensed";
@@ -487,25 +539,26 @@ form {
     display: flex;
     justify-content: space-between; }
   .contenidoImg {
-    width: 12%;
+    width: 14%;
     margin: 2px; }
   .contenidoInfo {
-    width: 20%;
+    width: 36%;
     float: left;
     margin: 3px;
     padding-top: 1%; }
   .contenidoCant {
-    width: 12%;
+    align-items: center;
+    width: 15%;
     float: left;
     margin: 3px;
     padding-top: 4%; }
   .contenidoValor {
-    width: 12%;
+    width: 15%;
     float: left;
     margin: 3px;
     padding-top: 4%; }
   .contenidoTotal {
-    width: 18%;
+    width: 15%;
     float: left;
     margin: 3px;
     padding-top: 4%; }

@@ -4,7 +4,7 @@ let unidades = 0;
 let carro = [];
 let stock = 0;
 let totalAPagar;
-let tituloPrecio;
+
 
 
 //=================  recuperamos del storage el carro de compras guardado siempre que tenga informacion
@@ -21,35 +21,109 @@ function mostrarCarro(maceteros, contenedor) {
         totalAPagar = 0;
         maceteros.forEach(productoCarro => {
             totalAPagar = totalAPagar + productoCarro.total;
-            contenedor.innerHTML += `
-            <div class="mostrandoCarro cajaProductos" >
-                <div class="contenidoImg">
-                        <img src="${productoCarro.foto}" class="imgCarro">
-                </div>
-                <div class="contenidoInfo">
-                    <h7>${productoCarro.categoria}</h7> 
-                    <h6> ${productoCarro.nombre}</h6>
-                    <h6> ${productoCarro.descripcion}</h6>
-                    <h8> Código ${productoCarro.id}</h8>
-                </div>
-                <div class="contenidoCant">
-                    <button class="restar">&nbsp - &nbsp</button>
-                        <input type="text" minlength="1" maxlength="2" size="1" value="${productoCarro.cantidad}">
-                    <button class="sumar">&nbsp + &nbsp</button>
-                <br>
-                <br>
-                    <button class="btn btn-danger" onclick="">Eliminar</button>
-                </div>
-                <div class="contenidoValor">
-                    <span> $ </span>
-                    <span> ${productoCarro.precio}</span>
-                    <span> C / U </span>
-                 </div>
-                <div class="contenidoTotal">
-                    <span>Total producto:</span> 
-                     <span> $${productoCarro.total} </span>
-                </div>
-            </div>`;
+
+            const mostrandoCarro = document.createElement('div');
+            mostrandoCarro.setAttribute('class', 'mostrandoCarro cajaProductos');
+
+            const contenidoImg = document.createElement('div');
+            contenidoImg.setAttribute('class', 'contenidoImg');
+
+            const imgCarro = document.createElement('img');
+            imgCarro.setAttribute('class', 'imgCarro');
+            imgCarro.setAttribute("src", `${productoCarro.foto }`);
+            contenidoImg.appendChild(imgCarro);
+
+            mostrandoCarro.appendChild(contenidoImg);
+
+            const contenidoInfo = document.createElement('div');
+            contenidoInfo.setAttribute('class', 'contenidoInfo');
+
+            const categoria = document.createElement('h6');
+            categoria.setAttribute('class', 'fontCategoria');
+            categoria.innerHTML = `${productoCarro.categoria}`;
+            contenidoInfo.appendChild(categoria);
+
+            const nombre = document.createElement('h6');
+            nombre.setAttribute('class', 'fontNombre');
+            nombre.innerHTML = `${productoCarro.nombre}`;
+            contenidoInfo.appendChild(nombre);
+
+            const descripcion = document.createElement('h6');
+            descripcion.setAttribute('class', 'fontDescripcion');
+            descripcion.innerHTML = `${productoCarro.descripcion}<br>`;
+            contenidoInfo.appendChild(descripcion);
+
+            const carroid = document.createElement('h6');
+            carroid.setAttribute('class', 'fontcarroid');
+            carroid.innerHTML = `Código: ${productoCarro.id}`;
+            contenidoInfo.appendChild(carroid);
+
+            mostrandoCarro.appendChild(contenidoInfo);
+
+            const contenidoCant = document.createElement('div');
+            contenidoCant.setAttribute('class', 'contenidoCant');
+
+            const restarcant = document.createElement('button');
+            if (productoCarro.id == 1) {
+                restarcant.setAttribute("disabled", true);
+            }
+            restarcant.setAttribute('class', 'restar');
+            restarcant.setAttribute('id', `resta${productoCarro.id}`);
+            restarcant.innerHTML = `&nbsp - &nbsp`;
+            contenidoCant.appendChild(restarcant)
+
+            const inputcant = document.createElement('input');
+            inputcant.setAttribute('minlength', 1);
+            inputcant.setAttribute('maxlength', 2);
+            inputcant.setAttribute('size', 2);
+            inputcant.setAttribute('value', `${productoCarro.cantidad}`);
+            contenidoCant.appendChild(inputcant)
+
+            const sumarcant = document.createElement('button');
+            sumarcant.setAttribute('class', 'sumar');
+            sumarcant.setAttribute('id', `suma${productoCarro.id}`);
+            sumarcant.innerHTML = `&nbsp + &nbsp <br>`;
+            contenidoCant.appendChild(sumarcant);
+
+            const eliminarprod = document.createElement('button');
+            eliminarprod.setAttribute('class', 'btn btn-danger');
+            eliminarprod.setAttribute('id', `elimina${productoCarro.id}`);
+            eliminarprod.innerHTML = `Eliminar`;
+            contenidoCant.appendChild(eliminarprod);
+
+            mostrandoCarro.appendChild(contenidoCant);
+
+            const contenidoValor = document.createElement('div');
+            contenidoValor.setAttribute('class', 'contenidoValor')
+
+            const precioprod = document.createElement('h5');
+            precioprod.setAttribute('class', 'fontPrecioUnitario')
+            precioprod.innerText = `$ ${productoCarro.precio}.- c/u`;
+            contenidoValor.appendChild(precioprod);
+
+            mostrandoCarro.appendChild(contenidoValor);
+
+            const contenidoTotal = document.createElement('div');
+            contenidoTotal.setAttribute('class', 'contenidoTotal')
+
+            const totalproducto = document.createElement('h5');
+            totalproducto.setAttribute('class', 'fontPrecio');
+            totalproducto.innerText = `$ ${productoCarro.total}.-`;
+            contenidoTotal.appendChild(totalproducto);
+
+
+            mostrandoCarro.appendChild(contenidoTotal);
+
+            contenedor.appendChild(mostrandoCarro);
+
+            document.getElementById(`suma${productoCarro.id}`).addEventListener('click', () => {
+                sumarcantidad(`${productoCarro.id}`);
+            });
+
+            document.getElementById(`resta${productoCarro.id}`).addEventListener('click', () => {
+                restarcantidad(`${productoCarro.id}`);
+            });
+
         });
         ////============= construimos un elemento el cual sera boton y llamara a la funcion limpiarcarro    
         const limpiar = document.getElementById('limpiarCarro');
@@ -58,18 +132,16 @@ function mostrarCarro(maceteros, contenedor) {
         limpiar.innerText = 'Vaciar Carro';
         document.getElementById('vaciar').addEventListener('click', vaciarCarro); // evento click llama a la funcion
 
-
-
-        tituloPrecio = document.getElementById("montoCompra");
+        const tituloPrecio = document.getElementById("montoCompra");
         tituloPrecio.innerHTML = "Total a pagar $" + totalAPagar;
-        console.log("este es el total" + tituloPrecio);
+        console.log("este es el total" + totalAPagar);
         datoscompra.appendChild(tituloPrecio);
 
         const btnComprar = document.getElementById('botonComprar');
         btnComprar.innerText = 'Comprar';
         btnComprar.setAttribute('class', 'btn btn-secondary');
         datoscompra.appendChild(btnComprar);
-        descripcionTotal.parendChild(limpiar);
+        //limpiar.parendChild(limpiar);
 
         ////================ si esta vacio maceteros indicara que esta vacio el carro
     } else {
@@ -102,9 +174,29 @@ function vaciarCarro() {
     mostrarCarro(carro, contenedorCarro); ////====llama a funcion para mostrar en la pagina el carro vacio
 }
 
-function actualizarCantidad(entrada, id) {
-    console.log(id);
-    // productoCarro[id].cantidad = entrada;
+function sumarcantidad(indices) {
 
-    // alert("PRESIONASTE EL ENTER !!!" + enter);
+    const productoEncontrado = carro.find(producto => producto.id === parseInt(indices));
+    productoEncontrado.cantidad++;
+    productoEncontrado.total = productoEncontrado.cantidad * productoEncontrado.precio;
+    localStorage.setItem('carro', JSON.stringify(carro));
+    // const actcant = document.createElement('input');
+    // actcant.setAttribute('value', `${productoEncontrado.cantidad}`);
+    // contenidoCant.appendChild(actcant)
+}
+
+function restarcantidad(indicer) {
+    const restarProducto = carro.find(producto => producto.id === parseInt(indicer));
+    restarProducto.cantidad--;
+    restarProducto.total = restarProducto.cantidad * restarProducto.precio;
+    localStorage.setItem('carro', JSON.stringify(carro));
+
+}
+
+function eliminarProducto(indicee) {
+    //const productoeliminados = carro.find(producto => producto.id === parseInt(id));
+    alert("aprete Eliminar")
+    console.log(indicee);
+    localStorage.setItem('carro', JSON.stringify(carro));
+    mostrarCarro(carro, contenedorCarro);
 }
