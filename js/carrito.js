@@ -13,7 +13,8 @@ class Producto {
 }
 
 class Carro {
-    constructor(id, categoria, nombre, foto, descripcion, precio, cantidad, total) {
+    constructor(indice, id, categoria, nombre, foto, descripcion, precio, cantidad, total) {
+        this.indice = indice;
         this.id = id;
         this.categoria = categoria;
         this.nombre = nombre;
@@ -110,6 +111,7 @@ function agregarAlCarro(id, nuevoproducto) {
 
     if (carro.some(productos => productos.id === parseInt(id))) {
         const actualizarProducto = carro.find(productos => productos.id === parseInt(id));
+        actualizarProducto.stock = actualizarProducto.stock - 1;
         actualizarProducto.cantidad++;
         actualizarProducto.total = actualizarProducto.cantidad * actualizarProducto.precio;
         Swal.fire({
@@ -122,7 +124,9 @@ function agregarAlCarro(id, nuevoproducto) {
         })
 
     } else {
-        const productoMejorado = new Carro(agregar.id, agregar.categoria, agregar.nombre, agregar.foto, agregar.descripcion, agregar.precio, 1, agregar.precio);
+        var indiceproductos = 0;
+        const productoMejorado = new Carro(indiceproductos, agregar.id, agregar.categoria, agregar.nombre, agregar.foto, agregar.descripcion, agregar.precio, 1, agregar.precio);
+        productoMejorado.stock = productoMejorado.stock - 1;
         carro.push(productoMejorado);
         console.log(carro);
         Swal.fire({
@@ -150,6 +154,7 @@ function Calcular() {
     tituloTotalUnidades.innerText = cantidadProductos;
     // guardamos el carro localStorage cada vez que se agrega un producto para que no se pierda
     localStorage.setItem('carro', JSON.stringify(carro));
+
 }
 // llamamos a Funcion Saludo 
 //saludos = saludo();
@@ -182,6 +187,7 @@ const $datos = document.querySelector(".datos"),
     $fragment = document.createDocumentFragment();
 
 // mostramos los productos Activados y si se ingresa admin se mostraran todos los produtos
+
 produc.forEach(productos => {
     if ((productos.estado === "Activo") || (usuario === "admin")) {
         $template.querySelector("section").setAttribute("id", productos.claseCSS);
@@ -215,7 +221,6 @@ produc.forEach(productos => {
 
     }
 });
-
 // realiza el calculo del carro  suma y cantidad de items
 
 

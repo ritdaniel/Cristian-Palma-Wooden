@@ -443,19 +443,12 @@ form {
   margin-right: 7px; }
 
 .contienecarro {
-  width: 6%;
-  background-image: url(../icono/carro.svg);
-  background-size: 55%;
-  background-position: bottom;
-  background-repeat: no-repeat;
-  display: flex; }
-
-.CantidadCarro {
-  color: cornsilk;
-  background-image: url(../icono/circulo.png);
-  background-size: 200%;
-  background-repeat: no-repeat;
-  display: flex; }
+  width: 8%; }
+  .contienecarro span {
+    color: cornsilk; }
+  .contienecarro img {
+    width: 40%;
+    margin-right: 40%; }
 
 .foter__title--grey {
   color: #2B2B2B;
