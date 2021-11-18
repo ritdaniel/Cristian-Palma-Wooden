@@ -221,11 +221,3 @@ produc.forEach(productos => {
 
     }
 });
-// realiza el calculo del carro  suma y cantidad de items
-
-
-// se realiza Impresion en el html
-//Saludar.appendChild(Saludar);
-//tituloPrecio.appendChild(tituloPrecio);
-//tituloTotalUnidades.appendChild(tituloTotalUnidades);
-//Nueva.appendChild(Nueva);
