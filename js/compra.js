@@ -169,12 +169,21 @@ function mostrarCarro(maceteros, contenedor) {
     descripcionTotal.appendChild(limpiar);
 
 
-    //=============  Miestra los datos del total 
+    //=============  Mestra los datos del total 
     const datoscompra = document.createElement('div');
+    datoscompra.setAttribute('id', 'formulario');
     descripcionTotal.appendChild(datoscompra)
     const montoCompra = document.createElement('h4');
     montoCompra.innerText = `Total a pagar $ ${totalAPagar}.-`;
     datoscompra.appendChild(montoCompra);
+
+
+
+
+
+
+
+
 
     //=============  Crea el boton comprar  
     const btnComprar = document.createElement('div');
@@ -184,6 +193,31 @@ function mostrarCarro(maceteros, contenedor) {
 
     //=============  Muestra el boton cuando el total no sea vacio
     if (totalAPagar > 0) {
+        $("#formulario").append(`<button id="mostrarFormulario"> Agregar Datos despacho </button>`);
+
+        $("#formulario").append(`<button id="OcultarFormulario" style="display:none"> Ocultar datos despacho </button>`);
+
+
+        $("#mostrarFormulario").click(function() {
+            $("#formularioEntrega").slideDown(2000);
+            $("#OcultarFormulario").fadeIn(2000);
+            $("#mostrarFormulario").fadeOut();
+        });
+
+        $("#OcultarFormulario").click(function() {
+            $("#formularioEntrega").slideUp(2000);
+            $("#OcultarFormulario").fadeOut(2000);
+            $("#mostrarFormulario").fadeIn();
+        });
+
+        $("#formulario").append(`
+        <br><Br>
+        <form id="formularioEntrega" style= "display:none ">
+            <input name="name" placeholder="Introduce tu hombre" class="required"/><br>
+            <br><input name="phone" placeholder="Telefono"/>             <br>
+            <br><input name="name" placeholder="Direccion entrega" class="required"/><br>
+            <br><input name="mail" placeholder="Email" class="required"/>       <br><br>      
+    </form> `);
         datoscompra.appendChild(btnComprar);
         document.getElementById(`comprar`).addEventListener('click', () => {
             pagarCarro();

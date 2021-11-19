@@ -104,7 +104,6 @@ function saludo() {
 };
 // alert(usuario);
 // Funcion para Agregar producto al carro
-//id, categoria, nombre, foto, descripcion, precio, cantidad, total  este es el carro
 
 function agregarAlCarro(id, nuevoproducto) {
     const agregar = nuevoproducto.find(productos => productos.id === parseInt(id));

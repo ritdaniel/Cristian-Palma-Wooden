@@ -59,15 +59,7 @@ productos.push(producto1, producto2, producto3, producto4, producto5, producto6,
 MostrarProductos(productos)
 
 function MostrarProductos(productosTienda) {
-    // let categorias = productosTienda.map(item => item.categoria);
-    // let result = categorias.filter((item, index) => { return categorias.indexOf(item) === index; });
-    // var cantidadCategorias = result.length;
-    // var indice;
-    // var validacion = 0;
 
-    // for (indice = 0; indice < cantidadCategorias;) { //${productoc.claseCSS}
-
-    //     console.log("categor" + result[indice])
     $(".datos").append(`<section id="" class="cajaProductos"> `);
     productosTienda.forEach(productoc => {
 
