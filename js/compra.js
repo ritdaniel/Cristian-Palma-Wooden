@@ -193,13 +193,13 @@ function mostrarCarro(maceteros, contenedor) {
 
     //=============  Muestra el boton cuando el total no sea vacio
     if (totalAPagar > 0) {
-        $("#formulario").append(`<button id="mostrarFormulario"> Agregar Datos despacho </button>`);
 
-        $("#formulario").append(`<button id="OcultarFormulario" style="display:none"> Ocultar datos despacho </button>`);
-
+        //=============  Agregamos 2 botones utilizados para mostrar u ocultar el formulario de datos para el despacho
+        $("#formulario").append(`<button id="mostrarFormulario"> Agregar Datos despacho </button><br>`);
+        $("#formulario").append(`<button id="OcultarFormulario" style="display:none"> Ocultar datos despacho </button><br>`);
 
         $("#mostrarFormulario").click(function() {
-            $("#formularioEntrega").slideDown(2000);
+            $("#formularioEntrega").css("background-color", "#CCC").slideDown(2000);
             $("#OcultarFormulario").fadeIn(2000);
             $("#mostrarFormulario").fadeOut();
         });
@@ -211,13 +211,13 @@ function mostrarCarro(maceteros, contenedor) {
         });
 
         $("#formulario").append(`
-        <br><Br>
-        <form id="formularioEntrega" style= "display:none ">
+        <form id="formularioEntrega" style= "display:none " style= "padding: 10px">
+        <br>
             <input name="name" placeholder="Introduce tu hombre" class="required"/><br>
             <br><input name="phone" placeholder="Telefono"/>             <br>
             <br><input name="name" placeholder="Direccion entrega" class="required"/><br>
             <br><input name="mail" placeholder="Email" class="required"/>       <br><br>      
-    </form> `);
+    </form> <br> `);
         datoscompra.appendChild(btnComprar);
         document.getElementById(`comprar`).addEventListener('click', () => {
             pagarCarro();
