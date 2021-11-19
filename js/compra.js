@@ -198,17 +198,23 @@ function mostrarCarro(maceteros, contenedor) {
         $("#formulario").append(`<button id="mostrarFormulario"> Agregar Datos despacho </button><br>`);
         $("#formulario").append(`<button id="OcultarFormulario" style="display:none"> Ocultar datos despacho </button><br>`);
 
+        //=============  Agregamos Animaciones concatenadas para mostrar formulario y ocultar botones
         $("#mostrarFormulario").click(function() {
-            $("#formularioEntrega").css("background-color", "#CCC").slideDown(2000);
-            $("#OcultarFormulario").fadeIn(2000);
-            $("#mostrarFormulario").fadeOut();
+            $("#formularioEntrega").css("background-color", "#CCC").slideDown(2000, function() {
+                $("#mostrarFormulario").fadeOut(function() {
+                    $("#OcultarFormulario").fadeIn();
+                });
+            });
         });
 
         $("#OcultarFormulario").click(function() {
-            $("#formularioEntrega").slideUp(2000);
-            $("#OcultarFormulario").fadeOut(2000);
-            $("#mostrarFormulario").fadeIn();
+            $("#formularioEntrega").slideUp(2000, function() {
+                $("#OcultarFormulario").fadeOut(function() {
+                    $("#mostrarFormulario").fadeIn();
+                });
+            });
         });
+
 
         $("#formulario").append(`
         <form id="formularioEntrega" style= "display:none " style= "padding: 10px">
