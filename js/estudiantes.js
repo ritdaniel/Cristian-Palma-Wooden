@@ -14,8 +14,17 @@ function mostrarEstudiantes(mostrar) {
                 <p class ="descripcion" >${estudiantes.house}</p>
                 </div>`);
                 }
+                if (mostrar === "todos") {
+                    $("#datos").append(`<div class="productos">
+                <h1 class="cajaProductos__title--orange">${estudiantes.name}</h1>
+                <img src="${estudiantes.image}"alt = "${estudiantes.name}">
+                <h3 class ="cajaProductos__text--grey" > ${estudiantes.actor}</h3>
+                <p class ="descripcion" >${estudiantes.house}</p>
+                </div>`);
+                }
             });
         }
+
     });
 }
 
