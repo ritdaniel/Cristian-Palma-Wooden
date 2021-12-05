@@ -1,0 +1,180 @@
+{
+    "Productos": [{
+            "id": 1,
+            "claseCSS": "producMaceteros",
+            "categoria": "cuadrados",
+            "NombCategoria": "Maceteros Cuadrados",
+            "nombre": "Macetero Cuadrado Alto",
+            "foto": "img/cuadradoalto.png",
+            "estado": "Activo",
+            "variedad": [{
+                    "codigo": "MC40X18",
+                    "descripcion": "Macetero alargado 40cm alto x 18cm ancho.",
+                    "medida": "40 cm x 18 cm",
+                    "precio": 19990,
+                    "stock": 15
+                },
+                {
+                    "codigo": "MC50X20",
+                    "descripcion": "Macetero alargado 50cm alto x 20cm ancho.",
+                    "medida": "50 cm x 20 cm",
+                    "precio": 21990,
+                    "stock": 10
+                },
+                {
+                    "codigo": "MC60X25",
+                    "descripcion": "Macetero alargado 60cm alto x 25cm ancho.",
+                    "medida": "60 cm x 25 cm",
+                    "precio": 21990,
+                    "stock": 10
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "claseCSS": "producMaceteros",
+            "categoria": "cuadrados",
+            "NombCategoria": "Maceteros Cuadrados",
+            "nombre": "Maceteros Bajos",
+            "foto": "img/cuadradobajo.png",
+            "descripcion": "Maceteros bajos de madera con protector de madera acabado mate.",
+            "precio": 15990,
+            "stock": 15,
+            "estado": "Activo"
+        },
+        {
+            "id": 3,
+            "claseCSS": "producMaceteros",
+            "categoria": "cuadrados",
+            "NombCategoria": "Maceteros Cuadrados",
+            "nombre": "Maceteros Tipo piramide",
+            "foto": "img/cuadradodif.png",
+            "descripcion": "Medidas: 40 cm de alto, 50 de ancho y 25 de profundidad.",
+            "precio": 12990,
+            "stock": 9,
+            "estado": "Activo"
+        },
+        {
+            "id": 4,
+            "claseCSS": "producMaceteros",
+            "categoria": "cuadrados",
+            "NombCategoria": "Maceteros Cuadrados",
+            "nombre": "Maceteros Cuadrados",
+            "foto": "img/cuadrado.png",
+            "descripcion": "Macetero de madera con protector de madera acabado mate.",
+            "precio": 24990,
+            "stock": 3,
+            "estado": "Activo"
+        },
+        {
+            "id": 5,
+            "claseCSS": "producMaceteros",
+            "categoria": "hexagonales",
+            "NombCategoria": "Maceteros Hexagonales",
+            "nombre": "Maceteros Hexagonales",
+            "foto": "img/hexagonal.png",
+            "descripcion": "Macetero de madera con protector de madera acabado mate.",
+            "precio": 24990,
+            "stock": 6,
+            "estado": "Activo"
+        },
+        {
+            "id": 6,
+            "claseCSS": "producMaceteros",
+            "categoria": "triangulares",
+            "NombCategoria": "Maceteros Triangulares",
+            "nombre": "Maceteros triangulares",
+            "foto": "img/triangular.png",
+            "descripcion": "Macetero especial para suculentas o plantas pequeñas.",
+            "precio": 15990,
+            "stock": 6,
+            "estado": "Activo"
+        },
+        {
+            "id": 7,
+            "claseCSS": "porta Llave",
+            "categoria": "portaLLaves",
+            "NombCategoria": "Porta LLaves",
+            "nombre": "Porta LLaves",
+            "foto": "img/detalles.png",
+            "descripcion": "Porta LLave forma montaña con 5 ganchos.",
+            "precio": 14990,
+            "stock": 10,
+            "estado": "Activo"
+        },
+        {
+            "id": 8,
+            "claseCSS": "producJardinera",
+            "categoria": "jardineras",
+            "NombCategoria": "Jardinera",
+            "nombre": "Jardinera Piso",
+            "foto": "img/jardineraoutlet.png",
+            "descripcion": "Medidas: 40 cm de alto, 50 de ancho y 25 de profundidad.",
+            "precio": 18990,
+            "stock": 9,
+            "estado": "Activo"
+        },
+        {
+            "id": 9,
+            "claseCSS": "portaLlave",
+            "categoria": "portaLlave",
+            "NombCategoria": "Porta LLaves",
+            "nombre": "Porta LLaves con suculenta",
+            "foto": "img/portaconplanta.png",
+            "descripcion": "Porta LLave con macetero y suculenta",
+            "precio": 12990,
+            "stock": 5,
+            "estado": "Activo"
+        },
+        {
+            "id": 10,
+            "claseCSS": "Repisa",
+            "categoria": "repisas",
+            "NombCategoria": "Repisas",
+            "nombre": "Repisa",
+            "foto": "img/repisa.png",
+            "descripcion": "Hermosa repisa decagono con divisiones",
+            "precio": 32990,
+            "stock": 10,
+            "estado": "Activo"
+        },
+        {
+            "id": 11,
+            "claseCSS": "Repisa",
+            "categoria": "repisas",
+            "NombCategoria": "Repisas",
+            "nombre": "Media Luna",
+            "foto": "img/mediaLuna.png",
+            "descripcion": "Repisa tipo media luna 3 divisiones",
+            "precio": 19990,
+            "stock": 7,
+            "estado": "Activo"
+        },
+        {
+            "id": 12,
+            "claseCSS": "Repisa",
+            "categoria": "repisas",
+            "NombCategoria": "Repisas",
+            "nombre": "Pack 3 Repisas Hexagono",
+            "foto": "img/hexagono.png",
+            "descripcion": "Porta LLave con macetero y suculenta",
+            "precio": 12990,
+            "stock": 5,
+            "estado": "Activo"
+        },
+        {
+            "id": 13,
+            "claseCSS": "producJardinera",
+            "categoria": "jardineras",
+            "NombCategoria": "Jardinera",
+            "nombre": "Jardinera Dinamica Muro",
+            "foto": "img/jardinera.png",
+            "descripcion": "jardinera Dinamica para pared diferentes medidas",
+            "precio": 12990,
+            "stock": 5,
+            "estado": "Activo"
+        }
+
+    ]
+
+}

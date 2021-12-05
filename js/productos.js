@@ -1,88 +1,95 @@
-class Producto {
-    constructor(id, claseCSS, categoria, nombre, foto, descripcion, precio, stock, estado) {
-        this.id = id;
-        this.claseCSS = claseCSS;
-        this.categoria = categoria;
-        this.nombre = nombre;
-        this.foto = foto;
-        this.descripcion = descripcion;
-        this.precio = precio;
-        this.stock = stock;
-        this.estado = estado;
-    }
+MostrarProductos()
+if (localStorage.getItem('carro')) {
+    carro = JSON.parse(localStorage.getItem('carro'));
 }
 
-const productos = [];
-const producto1 = new Producto(1, 'producMaceteros', 'Maceteros Cuadrados', 'Macetero Cuadrado Alto', 'img/cuadradoalto.png',
-    'Macetero alargado 50cm alto x 18cm ancho.', 15990, 15, 'Activo');
+function agregarAlCarro(id, nuevoproducto) {
+    const agregar = nuevoproducto.find(productos => productos.id === parseInt(id));
 
-const producto2 = new Producto(2, 'producMaceteros', 'Maceteros Cuadrados', 'Maceteros Bajos', 'img/cuadradobajo.png',
-    'Maceteros bajos de madera con protector de madera acabado mate ', 15990, 15, 'Activo');
+    if (carro.some(productos => productos.id === parseInt(id))) {
+        const actualizarProducto = carro.find(productos => productos.id === parseInt(id));
+        actualizarProducto.stock = actualizarProducto.stock - 1;
+        actualizarProducto.cantidad++;
+        actualizarProducto.total = actualizarProducto.cantidad * actualizarProducto.precio;
+        Swal.fire({
+            title: agregar.nombre,
+            text: `Producto se encuentra en el carro
+             se actualizara cantidad`,
+            imageUrl: agregar.foto,
+            imageWidth: 150,
+            imageHeight: 150,
+        })
 
-const producto3 = new Producto(3, 'producMaceteros', 'Maceteros Cuadrados', 'Maceteros Tipo piramide', 'img/cuadradodif.png',
-    'Medidas: 40 cm de alto, 50 de ancho y 25 de profundidad.', 15990, 9, 'Activo');
+    } else {
+        var indiceproductos = 0;
+        const productoMejorado = new Carro(indiceproductos, agregar.id, agregar.categoria, agregar.nombre, agregar.foto, agregar.descripcion, agregar.precio, 1, agregar.precio);
+        productoMejorado.stock = productoMejorado.stock - 1;
+        carro.push(productoMejorado);
+        console.log(carro);
+        Swal.fire({
+            title: agregar.nombre,
+            text: 'Producto Ingresado al carro Exitosamente',
+            imageUrl: agregar.foto,
+            imageWidth: 150,
+            imageHeight: 150,
+        });
+    }
+    localStorage.setItem('carro', JSON.stringify(carro));
+}
 
-const producto4 = new Producto(4, 'producMaceteros', 'Maceteros Cuadrados', 'Maceteros Cuadrados', 'img/cuadrado.png',
-    'Macetero de madera con protector de madera acabado mate .', 24990, 3, 'Activo');
+function MostrarProductos() {
+    const ProductoJson = "productos.json";
 
-const producto5 = new Producto(5, 'producMaceteros', 'Maceteros Hexagonales', 'Maceteros Hexagonales', 'img/hexagonal.png',
-    'Macetero de madera con protector de madera acabado mate .', 24990, 6, 'Activo');
+    $.getJSON(ProductoJson, function(respuesta, estado) {
+        if (estado === "success") {
+            let categoria = respuesta.Productos;
 
-const producto6 = new Producto(6, 'producMaceteros', 'Maceteros triangulares', 'Maceteros triangulares', 'img/triangular.png',
-    'Macetero especial para suculentas o plantas pequeñas .', 15990, 6, 'Activo');
+            //------------- hacemos un array de las categorias para ir mostrando los productos segun categorias
+            const categorias = [];
+            categoria.forEach((item) => {
+                if (!categorias.includes(item.categoria)) {
+                    categorias.push(item.categoria);
+                }
+            });
+            const nombreCategorias = [];
+            categoria.forEach((item) => {
+                if (!nombreCategorias.includes(item.NombCategoria)) {
+                    nombreCategorias.push(item.NombCategoria);
+                }
+            });
+            let varios = respuesta.Productos;
+            for (var k = 0; k < categorias.length; k++) {
+                $(".datos").append(`<section class="cajaProductos"  id="${categorias[k]}">  
+                    <h1 class="cajaProductos__title--orange">${nombreCategorias[k]}
+                     <a href="#mLateral">
+                       <img class="subir" src="icono/subir.png" alt="subir"></a> </h1> 
+                       </section>`);
 
-const producto7 = new Producto(7, 'portaLlave', 'Porta LLaves', 'Porta LLaves', "img/detalles.png",
-    "Porta LLave forma montaña con 5 ganchos.", 14990, 10, "Activo");
+            }
+            varios.forEach(producto => {
+                console.log("esta es categoria" + producto.categoria);
 
-const producto8 = new Producto(8, 'producJardinera', 'Jardinera', 'Jardinera Piso', 'img/jardineraoutlet.png',
-    'Medidas: 40 cm de alto, 50 de ancho y 25 de profundidad.', 18990, 9, 'Activo');
-
-const producto9 = new Producto(9, 'portaLlave', 'Porta LLaves', 'Porta LLaves con suculenta', 'img/portaconplanta.png',
-    'Porta LLave con macetero y suculenta', 12990, 5, 'Activo');
-
-const producto10 = new Producto(10, 'Repisa', 'Repisa', 'Repisa', 'img/repisa.png',
-    'Hermosa repisa decagono con divisiones', 32990, 10, 'Activo');
-
-const producto11 = new Producto(11, 'Repisas', 'Media Luna', 'Media Luna', 'img/mediaLuna.png',
-    'Repisa tipo media luna 3 divisiones', 19990, 5, 'Activo');
-
-const producto12 = new Producto(12, 'Repisas', 'Repisas', 'Pack 3 Repisas Hexagono', 'img/hexagono.png',
-    'Porta LLave con macetero y suculenta', 12990, 5, 'Activo');
-
-const producto13 = new Producto(13, 'producJardinera', 'Jardinera', 'Jardinera Dinamica Muro', 'img/jardinera.png',
-    'jardinera Dinamica para pared diferentes medidas', 12990, 5, 'Activo');
-
-
-productos.push(producto1, producto2, producto3, producto4, producto5, producto6, producto7,
-    producto8, producto9, producto10, producto11, producto12, producto13);
-
-MostrarProductos(productos)
-
-function MostrarProductos(productosTienda) {
-
-    $(".datos").append(`<section id="" class="cajaProductos"> `);
-    productosTienda.forEach(productoc => {
-
-        $(".cajaProductos").append(`<div class="productos" id="productos">
-        <h1 class="cajaProductos__title--orange">${productoc.categoria}</h1>
-        <img src="${productoc.foto}"alt = "Maceteros Altos cuadrados">
-        <h3 class ="cajaProductos__text--grey" > ${productoc.nombre}</h3>
-        <p class ="descripcion" >${productoc.descripcion}</p>
-        <form >
-                <h6 > Seleccione medida: </h6> 
-                <select id = "medidaAlto"onchange = "valorAlto()" >
-                        <option > Medida Macetero </option> 
-                        <option > 40 cm x 18 cm </option> 
-                        <option > 50 cm x 20 cm </option> 
-                        <option > 60 cm x 25 cm </option> 
-                        </select > 
-        </form> 
+                $(`#${producto.categoria}`).append(`<div class="productos" id="productos">
+                            <img src="${producto.foto}"alt = "Maceteros Altos cuadrados">
+                            <h3 class ="cajaProductos__text--grey" > ${producto.nombre}</h3>
+                            <p class ="descripcion" >${producto.descripcion}</p>
+                            <form >
+                                <h6 > Seleccione medida: </h6> 
+                                <select id = "medidaAlto" onchange = "valorAlto()" >
+                                    <option > Medida Macetero </option> 
+                                    <option > 40 cm x 18 cm </option> 
+                                    <option > 50 cm x 20 cm </option> 
+                                    <option > 60 cm x 25 cm </option> 
+                                </select > 
+                            </form> 
                                 <p id = "precioA"class = "precio"> </p>
-                    <div class="btn btn-danger"> Agregar Carro </div> <br>
-                    </div>
-                    </section>`);
+                            <div class="btn btn-danger onclick = "agregarAlCarro(${producto.id}, ${varios})" "> Agregar Carro </div> <br>
+                            </div>`);
 
+            });
+
+
+        }
 
     });
-
 }
