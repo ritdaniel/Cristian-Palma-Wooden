@@ -127,3 +127,15 @@ form {
     margin: 5%;
     border: 1px double rgb(49, 49, 49);
 }
+
+.contienecarro {
+    background-image: url();
+    width: $maxbody;
+    margin: auto;
+    text-decoration: none;
+    font-size: 2rem;
+    float: right;
+    position: fixed;
+    right: 4px;
+    top: 10px;
+}

@@ -5,24 +5,25 @@
             "categoria": "cuadrados",
             "NombCategoria": "Maceteros Cuadrados",
             "nombre": "Macetero Cuadrado Alto",
+            "descripcion": "Hermosos Maceteros Alargados acabado mate",
             "foto": "img/cuadradoalto.png",
             "estado": "Activo",
             "variedad": [{
-                    "codigo": "MC40X18",
+                    "codigo": "MCA40X18",
                     "descripcion": "Macetero alargado 40cm alto x 18cm ancho.",
                     "medida": "40 cm x 18 cm",
                     "precio": 19990,
                     "stock": 15
                 },
                 {
-                    "codigo": "MC50X20",
+                    "codigo": "MCA50X20",
                     "descripcion": "Macetero alargado 50cm alto x 20cm ancho.",
                     "medida": "50 cm x 20 cm",
                     "precio": 21990,
                     "stock": 10
                 },
                 {
-                    "codigo": "MC60X25",
+                    "codigo": "MCA60X25",
                     "descripcion": "Macetero alargado 60cm alto x 25cm ancho.",
                     "medida": "60 cm x 25 cm",
                     "precio": 21990,
@@ -36,11 +37,31 @@
             "categoria": "cuadrados",
             "NombCategoria": "Maceteros Cuadrados",
             "nombre": "Maceteros Bajos",
+            "descripcion": "Maceteros bajos con protector de madera acabado mate",
             "foto": "img/cuadradobajo.png",
-            "descripcion": "Maceteros bajos de madera con protector de madera acabado mate.",
-            "precio": 15990,
-            "stock": 15,
-            "estado": "Activo"
+            "estado": "Activo",
+            "variedad": [{
+                    "codigo": "MCB25X18",
+                    "descripcion": "Maceteros bajos con protector de madera acabado mate 25cm alto x 18cm ancho.",
+                    "medida": "25 cm x 18 cm",
+                    "precio": 19990,
+                    "stock": 15
+                },
+                {
+                    "codigo": "MCB30X23",
+                    "descripcion": "Maceteros bajos con protector de madera acabado mate 30cm alto x 23cm ancho.",
+                    "medida": "30 cm x 23 cm",
+                    "precio": 21990,
+                    "stock": 7
+                },
+                {
+                    "codigo": "MCB39X30",
+                    "descripcion": "Maceteros bajos con protector de madera acabado mate 39cm alto x 30cm ancho.",
+                    "medida": "39 cm x 30 cm",
+                    "precio": 21990,
+                    "stock": 10
+                }
+            ]
         },
         {
             "id": 3,
@@ -48,11 +69,31 @@
             "categoria": "cuadrados",
             "NombCategoria": "Maceteros Cuadrados",
             "nombre": "Maceteros Tipo piramide",
+            "descripcion": "Macetero tipo piramide acabado mate diferentes medidas",
             "foto": "img/cuadradodif.png",
-            "descripcion": "Medidas: 40 cm de alto, 50 de ancho y 25 de profundidad.",
-            "precio": 12990,
-            "stock": 9,
-            "estado": "Activo"
+            "estado": "Activo",
+            "variedad": [{
+                    "codigo": "MCP18X18",
+                    "descripcion": "Macetero tipo piramide 18 cm x 18 cm",
+                    "medida": "18 cm x 18 cm",
+                    "precio": 19990,
+                    "stock": 15
+                },
+                {
+                    "codigo": "MCP23X23",
+                    "descripcion": "Macetero tipo piramide 23 cm x 23 cm",
+                    "medida": "23 cm x 23 cm",
+                    "precio": 21990,
+                    "stock": 7
+                },
+                {
+                    "codigo": "MCP30X30",
+                    "descripcion": "Macetero tipo piramide 30 cm x 30 cm",
+                    "medida": "30 cm x 30 cm",
+                    "precio": 21990,
+                    "stock": 10
+                }
+            ]
         },
         {
             "id": 4,
@@ -61,10 +102,30 @@
             "NombCategoria": "Maceteros Cuadrados",
             "nombre": "Maceteros Cuadrados",
             "foto": "img/cuadrado.png",
-            "descripcion": "Macetero de madera con protector de madera acabado mate.",
-            "precio": 24990,
-            "stock": 3,
-            "estado": "Activo"
+            "descripcion": "Macetero Cuadrado de madera con protector de madera acabado mate.",
+            "estado": "Activo",
+            "variedad": [{
+                    "codigo": "MCC30X30",
+                    "descripcion": "Macetero Cuadrado 30 cm x 30 cm, con protector de madera acabado mate.",
+                    "medida": "30 cm x 30 cm",
+                    "precio": 19990,
+                    "stock": 15
+                },
+                {
+                    "codigo": "MCC40X40",
+                    "descripcion": "Macetero Cuadrado 40 cm x 40 cm, con protector de madera acabado mate.",
+                    "medida": "40 cm x 40 cm",
+                    "precio": 21990,
+                    "stock": 7
+                },
+                {
+                    "codigo": "MCC50X50",
+                    "descripcion": "Macetero Cuadrado 50 cm x 50 cm, con protector de madera acabado mate.",
+                    "medida": "50 cm x 50 cm",
+                    "precio": 21990,
+                    "stock": 10
+                }
+            ]
         },
         {
             "id": 5,
@@ -74,9 +135,36 @@
             "nombre": "Maceteros Hexagonales",
             "foto": "img/hexagonal.png",
             "descripcion": "Macetero de madera con protector de madera acabado mate.",
-            "precio": 24990,
-            "stock": 6,
-            "estado": "Activo"
+            "estado": "Activo",
+            "variedad": [{
+                    "codigo": "MHA18X18",
+                    "descripcion": "Macetero Hexagonal 18 cm x 18 cm, Acabado mate.",
+                    "medida": "18 cm x 18 cm",
+                    "precio": 19990,
+                    "stock": 15
+                },
+                {
+                    "codigo": "MHA23X23",
+                    "descripcion": "Macetero Hexagonal 18 cm x 18 cm, Acabado mate.",
+                    "medida": "23 cm x 23 cm",
+                    "precio": 21990,
+                    "stock": 7
+                },
+                {
+                    "codigo": "MHA30X30",
+                    "descripcion": "Macetero Hexagonal 18 cm x 18 cm, Acabado mate.",
+                    "medida": "30 cm x 30 cm",
+                    "precio": 21990,
+                    "stock": 10
+                },
+                {
+                    "codigo": "MHA40X40",
+                    "descripcion": "Macetero Hexagonal 18 cm x 18 cm, Acabado mate.",
+                    "medida": "40 cm x 40 cm",
+                    "precio": 21990,
+                    "stock": 10
+                }
+            ]
         },
         {
             "id": 6,
@@ -86,9 +174,22 @@
             "nombre": "Maceteros triangulares",
             "foto": "img/triangular.png",
             "descripcion": "Macetero especial para suculentas o plantas pequeñas.",
-            "precio": 15990,
-            "stock": 6,
-            "estado": "Activo"
+            "estado": "Activo",
+            "variedad": [{
+                    "codigo": "MTS10X25",
+                    "descripcion": "Macetero especial para suculentas o plantas pequeñas, 10 cm x 25 cm .",
+                    "medida": "10 cm x 25 cm",
+                    "precio": 19990,
+                    "stock": 8
+                },
+                {
+                    "codigo": "MTS15X28",
+                    "descripcion": "Macetero especial para suculentas o plantas pequeñas 15 cm x 28 cm.",
+                    "medida": "15 cm x 28 cm",
+                    "precio": 21990,
+                    "stock": 7
+                }
+            ]
         },
         {
             "id": 7,
@@ -98,9 +199,22 @@
             "nombre": "Porta LLaves",
             "foto": "img/detalles.png",
             "descripcion": "Porta LLave forma montaña con 5 ganchos.",
-            "precio": 14990,
-            "stock": 10,
-            "estado": "Activo"
+            "estado": "Activo",
+            "variedad": [{
+                    "codigo": "PLM20X38",
+                    "descripcion": "Porta LLave forma montaña con 5 ganchos, medida 25 cm x 43 cm.",
+                    "medida": "20 cm x 38 cm",
+                    "precio": 19990,
+                    "stock": 8
+                },
+                {
+                    "codigo": "PLM25X43",
+                    "descripcion": "Porta LLave forma montaña con 5 ganchos, medida 25 cm x 43 cm .",
+                    "medida": "25 cm x 43 cm",
+                    "precio": 21990,
+                    "stock": 7
+                }
+            ]
         },
         {
             "id": 8,
@@ -109,22 +223,55 @@
             "NombCategoria": "Jardinera",
             "nombre": "Jardinera Piso",
             "foto": "img/jardineraoutlet.png",
-            "descripcion": "Medidas: 40 cm de alto, 50 de ancho y 25 de profundidad.",
-            "precio": 18990,
-            "stock": 9,
-            "estado": "Activo"
+            "descripcion": "Hermosas jardineras piso con Protector acabado Mate.",
+            "estado": "Activo",
+            "variedad": [{
+                    "codigo": "JP40X70X20",
+                    "descripcion": "Jardineras piso con Protector acabado Mate, 40 cm de alto, 70 de ancho y 20 de profundidad.",
+                    "medida": "40 cm x 70 cm x 20",
+                    "precio": 19990,
+                    "stock": 15
+                },
+                {
+                    "codigo": "JP50X70X20",
+                    "descripcion": "Jardineras piso con Protector acabado Mate, 50 cm de alto, 70 de ancho y 20 de profundidad.",
+                    "medida": "50 cm x 70 cm x 20",
+                    "precio": 21990,
+                    "stock": 7
+                },
+                {
+                    "codigo": "JP60X70X20",
+                    "descripcion": "Jardineras piso con Protector acabado Mate, 60 cm de alto, 70 de ancho y 20 de profundidad.",
+                    "medida": "60 cm x 70 cm x 20",
+                    "precio": 21990,
+                    "stock": 10
+                }
+            ]
         },
         {
             "id": 9,
             "claseCSS": "portaLlave",
-            "categoria": "portaLlave",
+            "categoria": "portaLLaves",
             "NombCategoria": "Porta LLaves",
             "nombre": "Porta LLaves con suculenta",
             "foto": "img/portaconplanta.png",
-            "descripcion": "Porta LLave con macetero y suculenta",
-            "precio": 12990,
-            "stock": 5,
-            "estado": "Activo"
+            "descripcion": "Porta LLave con macetero 5 ganchos y suculenta",
+            "estado": "Activo",
+            "variedad": [{
+                    "codigo": "PLM13X30",
+                    "descripcion": "Porta LLave con macetero 5 ganchos y suculenta 13 cm x 30 cm",
+                    "medida": "13 cm x 30 cm",
+                    "precio": 19990,
+                    "stock": 8
+                },
+                {
+                    "codigo": "PLM18X30",
+                    "descripcion": "Porta LLave con macetero 5 ganchos y suculenta 18 cm x 30 cm",
+                    "medida": "18 cm x 30 cm",
+                    "precio": 21990,
+                    "stock": 7
+                }
+            ]
         },
         {
             "id": 10,
@@ -134,9 +281,22 @@
             "nombre": "Repisa",
             "foto": "img/repisa.png",
             "descripcion": "Hermosa repisa decagono con divisiones",
-            "precio": 32990,
-            "stock": 10,
-            "estado": "Activo"
+            "estado": "Activo",
+            "variedad": [{
+                    "codigo": "RD51X51X115",
+                    "descripcion": "Hermosa repisa decagono con divisiones, medida 51 cm x 51 cm x 11,5.",
+                    "medida": "51 cm x 51 cm x 11,5",
+                    "precio": 19990,
+                    "stock": 15
+                },
+                {
+                    "codigo": "RD61X61X115",
+                    "descripcion": "Hermosa repisa decagono con divisiones, medida 61 cm x 61 cm x 11,5.",
+                    "medida": "61 cm x 61 cm x 11,5",
+                    "precio": 21990,
+                    "stock": 7
+                }
+            ]
         },
         {
             "id": 11,
@@ -146,9 +306,22 @@
             "nombre": "Media Luna",
             "foto": "img/mediaLuna.png",
             "descripcion": "Repisa tipo media luna 3 divisiones",
-            "precio": 19990,
-            "stock": 7,
-            "estado": "Activo"
+            "estado": "Activo",
+            "variedad": [{
+                    "codigo": "RML51X20X115",
+                    "descripcion": "Repisa tipo media luna 3 divisiones, medida 51 cm x 20 cm x 11,5.",
+                    "medida": "51 cm x 20 cm x 11,5",
+                    "precio": 19990,
+                    "stock": 15
+                },
+                {
+                    "codigo": "RML61X24X115",
+                    "descripcion": "Repisa tipo media luna 3 divisiones, medida 61 cm x 24 cm x 11,5.",
+                    "medida": "61 cm x 24 cm x 11,5",
+                    "precio": 21990,
+                    "stock": 7
+                }
+            ]
         },
         {
             "id": 12,
@@ -157,10 +330,23 @@
             "NombCategoria": "Repisas",
             "nombre": "Pack 3 Repisas Hexagono",
             "foto": "img/hexagono.png",
-            "descripcion": "Porta LLave con macetero y suculenta",
-            "precio": 12990,
-            "stock": 5,
-            "estado": "Activo"
+            "descripcion": "Pack 3 repisas",
+            "estado": "Activo",
+            "variedad": [{
+                    "codigo": "RH50X57X115",
+                    "descripcion": "Pack 3 Repisas Hexagono, medida 50 cm x 57 cm x 11,5.",
+                    "medida": "50 cm x 57 cm x 11,5",
+                    "precio": 19990,
+                    "stock": 15
+                },
+                {
+                    "codigo": "RH60X67X115",
+                    "descripcion": "Pack 3 Repisas Hexagono, medida 50 cm x 57 cm x 11,5.",
+                    "medida": "60 cm x 67 cm x 11,5",
+                    "precio": 21990,
+                    "stock": 7
+                }
+            ]
         },
         {
             "id": 13,
@@ -170,9 +356,29 @@
             "nombre": "Jardinera Dinamica Muro",
             "foto": "img/jardinera.png",
             "descripcion": "jardinera Dinamica para pared diferentes medidas",
-            "precio": 12990,
-            "stock": 5,
-            "estado": "Activo"
+            "estado": "Activo",
+            "variedad": [{
+                    "codigo": "JDP100X100",
+                    "descripcion": "Jjardinera Dinamica para pared acabado mate, 100 cm x 100 cm.",
+                    "medida": "100 cm x 100 cm",
+                    "precio": 19990,
+                    "stock": 15
+                },
+                {
+                    "codigo": "JDP120X90",
+                    "descripcion": "jardinera Dinamica para pared acabado mate, 120 cm x 90 cm.",
+                    "medida": "120 cm x 90 cm",
+                    "precio": 21990,
+                    "stock": 7
+                },
+                {
+                    "codigo": "JDP150X90",
+                    "descripcion": "jardinera Dinamica para pared acabado mate, 150 cm x 90 cm.",
+                    "medida": "150 cm x 90 cm",
+                    "precio": 21990,
+                    "stock": 10
+                }
+            ]
         }
 
     ]

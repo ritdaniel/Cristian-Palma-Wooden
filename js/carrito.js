@@ -72,40 +72,10 @@ let stock = 0;
 let saludos = "";
 let cantidadProductos = 0;
 
-
-// Funcion saludo depende de la hora
-function saludo() {
-    let saludoBienvenida = "";
-    let fecha = new Date();
-    let hora = fecha.getHours();
-    let horario;
-    if (hora >= 0 && hora < 12) horario = "Buenos Días";
-    if (hora >= 12 && hora < 20) horario = "Buenas Tardes";
-    if (hora >= 20 && hora < 24) horario = "Buenas Noches";
-    Swal
-        .fire({
-            title: "Ingrese Su Nombre",
-            input: "text",
-            inputPlaceholder: 'Ingrese su nombre...',
-            confirmButtonText: "OK",
-            inputValidator: name => {
-                if (!name) {
-                    return "Favor ingrese su Nombre";
-                } else {
-                    usuario = name;
-                    return undefined;
-                }
-
-            }
-
-        })
-    saludoBienvenida = horario + " " + usuario;
-    return (saludoBienvenida);
-};
-// alert(usuario);
 // Funcion para Agregar producto al carro
 
 function agregarAlCarro(id, nuevoproducto) {
+
     const agregar = nuevoproducto.find(productos => productos.id === parseInt(id));
 
     if (carro.some(productos => productos.id === parseInt(id))) {
@@ -114,10 +84,10 @@ function agregarAlCarro(id, nuevoproducto) {
         actualizarProducto.cantidad++;
         actualizarProducto.total = actualizarProducto.cantidad * actualizarProducto.precio;
         Swal.fire({
-            title: agregar.nombre,
+            title: actualizarProducto.nombre,
             text: `Producto se encuentra en el carro
              se actualizara cantidad`,
-            imageUrl: agregar.foto,
+            imageUrl: actualizarProducto.foto,
             imageWidth: 150,
             imageHeight: 150,
         })
@@ -155,14 +125,6 @@ function Calcular() {
     localStorage.setItem('carro', JSON.stringify(carro));
 
 }
-// llamamos a Funcion Saludo 
-//saludos = saludo();
-
-// creamos el elemento saludar para poder imprimir dentro del id correspondiente
-let Saludar = document.getElementById("saludoHtml");
-Saludar.style.textAlign = "right"; // agregamos estilo (texto al lado derecho)
-Saludar.innerText = saludos;
-
 
 // creamos el elemento tituloPrecio (valor acumilado de productos en el carro) para poder imprimir dentro del id correspondiente
 let tituloPrecio = document.getElementById("montoCompra");
@@ -171,9 +133,8 @@ tituloPrecio.innerText = "0";
 
 // creamos el elemento tituloTotalUnidades (cantidad productos en el carro) para poder imprimir dentro del id correspondiente    
 let tituloTotalUnidades = document.getElementById("Cantidad");
-//tituloTotalUnidades.style.textAlign = "right"; // agregamos estilo (texto al lado derecho)
+tituloTotalUnidades.style.textAlign = "right"; // agregamos estilo (texto al lado derecho)
 tituloTotalUnidades.innerText = "0";
-console.log(" este es :" + saludos);
 // recuperamos el carro cuando la persona se cambio de pagina
 if (localStorage.getItem('carro')) {
     carro = JSON.parse(localStorage.getItem('carro'));
@@ -188,7 +149,7 @@ const $datos = document.querySelector(".datos"),
 // mostramos los productos Activados y si se ingresa admin se mostraran todos los produtos
 
 produc.forEach(productos => {
-    if ((productos.estado === "Activo") || (usuario === "admin")) {
+    if (productos.estado === "Activo") {
         $template.querySelector("section").setAttribute("id", productos.claseCSS);
         $template.querySelector("h1").textContent = productos.categoria;
         $template.querySelector("div").setAttribute("class", "productos");
@@ -198,25 +159,13 @@ produc.forEach(productos => {
         $template.querySelector("h2").textContent = productos.precio;
         $template.querySelector("button").setAttribute("id", productos.id);
         $template.querySelector("button").setAttribute("value", productos.id);
-        $template.querySelector("input").style.visibility = "hidden"; // se deja oculto el checkbox cuando no es admin
-        if (usuario == "admin") {
-            $template.querySelector("button").setAttribute("disabled", true); // se desabilita boton de compra
-            $template.querySelector("input").style.visibility = "visible"; // se habilita checkbox modificar estado
-            if (element.estado === "Activo") {
-                $template.querySelector("label").textContent = "Desactivar";
-                $template.querySelector("label").setAttribute("value", "Desactivar");
-            }
-            if (element.estado === "Desactivado") {
-                $template.querySelector("label").textContent = "Activar";
-                $template.querySelector("label").setAttribute("value", "Desactivar");
-            }
-        }
+        $template.querySelector("button").setAttribute("class", "btn btn-danger");
+
         $template.querySelector("h6").textContent = "Stock disponible: " + productos.stock;
 
         let $clone = document.importNode($template, true); // clonamos completamente el nodo templetcon toda la estructura 
         $fragment.appendChild($clone);
         $datos.appendChild($fragment);
         document.getElementById(`${productos.id}`).onclick = () => agregarAlCarro(`${productos.id}`, produc);
-
     }
 });

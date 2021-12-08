@@ -60,7 +60,6 @@ select {
   font-size: 1.3rem;
   color: red;
   margin-top: 5px;
-  background-color: rgba(221, 218, 216, 0.541);
   padding: 5px; }
 
 .restar {
@@ -255,7 +254,6 @@ select {
   font-size: 1.3rem;
   color: red;
   margin-top: 5px;
-  background-color: rgba(221, 218, 216, 0.541);
   padding: 5px; }
 
 .restar {
@@ -417,6 +415,17 @@ form {
   border-radius: 15px;
   margin: 5%;
   border: 1px double #313131; }
+
+.contienecarro {
+  background-image: url();
+  width: 98%;
+  margin: auto;
+  text-decoration: none;
+  font-size: 2rem;
+  float: right;
+  position: fixed;
+  right: 4px;
+  top: 10px; }
 
 .footer {
   background-color: rgba(248, 244, 241, 0.301);

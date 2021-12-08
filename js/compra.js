@@ -169,7 +169,7 @@ function mostrarCarro(maceteros, contenedor) {
     descripcionTotal.appendChild(limpiar);
 
 
-    //=============  Mestra los datos del total 
+    //=============  Muestra los datos del total 
     const datoscompra = document.createElement('div');
     datoscompra.setAttribute('id', 'formulario');
     descripcionTotal.appendChild(datoscompra)
