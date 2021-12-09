@@ -126,6 +126,10 @@ function mostrarCarro(maceteros, contenedor) {
                 mostrandoCarro.appendChild(contenidoTotal);
                 contenedor.appendChild(mostrandoCarro);
 
+                let tituloPrecio = document.getElementById("montoCompra");
+                tituloPrecio.style.textAlign = "right"; // agregamos estilo (texto al lado derecho)
+                tituloPrecio.innerText = productoCarro.total;
+
                 document.getElementById(`suma${productoCarro.indice}`).addEventListener('click', () => {
                     sumarcantidad(`${productoCarro.indice}`);
                 });
@@ -144,6 +148,10 @@ function mostrarCarro(maceteros, contenedor) {
 
         ////================ si esta vacio maceteros indicara que esta vacio el carro
     } else {
+        let tituloPrecio = document.getElementById("montoCompra");
+        tituloPrecio.style.textAlign = "right"; // agregamos estilo (texto al lado derecho)
+        tituloPrecio.innerText = "0";
+
         totalAPagar = 0;
         contenedor.innerHTML = `
                 <div class="datos__title--tprincipal cajaProductos" >
@@ -237,6 +245,7 @@ mostrarCarro(carro, contenedorCarro);
 
 ////============= funcion para vaciar el carro
 function vaciarCarro() {
+
     carro = [];
     localStorage.setItem('carro', JSON.stringify(carro));
     Swal
