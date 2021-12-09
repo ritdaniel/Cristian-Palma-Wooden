@@ -1,6 +1,7 @@
 class Producto {
-    constructor(id, claseCSS, categoria, nombre, foto, descripcion, precio, stock, estado) {
+    constructor(id, codigo, claseCSS, categoria, nombre, foto, descripcion, precio, stock, estado) {
         this.id = id;
+        this.codigo = codigo;
         this.claseCSS = claseCSS;
         this.categoria = categoria;
         this.nombre = nombre;
@@ -11,12 +12,12 @@ class Producto {
         this.estado = estado;
     }
 }
-
 class Carro {
-    constructor(indice, id, categoria, nombre, foto, descripcion, precio, cantidad, total) {
+    constructor(indice, id, codigo, NombCategoria, nombre, foto, descripcion, precio, cantidad, total) {
         this.indice = indice;
         this.id = id;
-        this.categoria = categoria;
+        this.codigo = codigo;
+        this.NombCategoria = NombCategoria;
         this.nombre = nombre;
         this.foto = foto;
         this.descripcion = descripcion;
@@ -28,6 +29,7 @@ class Carro {
 const produc = [];
 const producto1 = new Producto(
     1,
+    'OUMCA50X18',
     'producMaceteros',
     'Maceteros Cuadrados',
     'Macetero Cuadrado Alto',
@@ -40,6 +42,7 @@ const producto1 = new Producto(
 
 const producto2 = new Producto(
     2,
+    'OURH50X57',
     'producRepisa',
     'Repisas',
     'Repisa Hexagonal',
@@ -52,6 +55,7 @@ const producto2 = new Producto(
 
 const producto3 = new Producto(
     3,
+    'OUJP40X50',
     'producJardinera',
     'Jardinera',
     'Jardinera Piso',
@@ -76,10 +80,10 @@ let cantidadProductos = 0;
 
 function agregarAlCarro(id, nuevoproducto) {
 
-    const agregar = nuevoproducto.find(productos => productos.id === parseInt(id));
+    const agregar = nuevoproducto.find(productos => productos.codigo === id);
 
-    if (carro.some(productos => productos.id === parseInt(id))) {
-        const actualizarProducto = carro.find(productos => productos.id === parseInt(id));
+    if (carro.some(productos => productos.codigo === id)) {
+        const actualizarProducto = carro.find(productos => productos.codigo === id);
         actualizarProducto.stock = actualizarProducto.stock - 1;
         actualizarProducto.cantidad++;
         actualizarProducto.total = actualizarProducto.cantidad * actualizarProducto.precio;
@@ -93,8 +97,8 @@ function agregarAlCarro(id, nuevoproducto) {
         })
 
     } else {
-        var indiceproductos = 0;
-        const productoMejorado = new Carro(indiceproductos, agregar.id, agregar.categoria, agregar.nombre, agregar.foto, agregar.descripcion, agregar.precio, 1, agregar.precio);
+        var indiceproductos = carro.length;
+        const productoMejorado = new Carro(indiceproductos, agregar.id, agregar.codigo, agregar.categoria, agregar.nombre, agregar.foto, agregar.descripcion, agregar.precio, 1, agregar.precio);
         productoMejorado.stock = productoMejorado.stock - 1;
         carro.push(productoMejorado);
         console.log(carro);
@@ -110,7 +114,6 @@ function agregarAlCarro(id, nuevoproducto) {
     Calcular();
 
 }
-
 
 function Calcular() {
     total = 0;
@@ -157,8 +160,8 @@ produc.forEach(productos => {
         $template.querySelector("h3").textContent = productos.nombre;
         $template.querySelector("p").textContent = productos.descripcion;
         $template.querySelector("h2").textContent = productos.precio;
-        $template.querySelector("button").setAttribute("id", productos.id);
-        $template.querySelector("button").setAttribute("value", productos.id);
+        $template.querySelector("button").setAttribute("id", productos.codigo);
+        $template.querySelector("button").setAttribute("value", productos.codigo);
         $template.querySelector("button").setAttribute("class", "btn btn-danger");
 
         $template.querySelector("h6").textContent = "Stock disponible: " + productos.stock;
@@ -166,6 +169,6 @@ produc.forEach(productos => {
         let $clone = document.importNode($template, true); // clonamos completamente el nodo templetcon toda la estructura 
         $fragment.appendChild($clone);
         $datos.appendChild($fragment);
-        document.getElementById(`${productos.id}`).onclick = () => agregarAlCarro(`${productos.id}`, produc);
+        document.getElementById(`${productos.codigo}`).onclick = () => agregarAlCarro(`${productos.codigo}`, produc);
     }
 });
