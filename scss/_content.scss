@@ -141,8 +141,14 @@ form {
 }
 
 a.navbar.contienecarro {
-    height: 14%;
+    background-color: rgba(241, 154, 71, 0.623);
+    padding: 5px;
+    border-radius: 10px;
+    margin-right: 15px;
+    margin-bottom: 5px;
+    height: 11%;
     h6 {
         color: rgb(17, 17, 17);
+        padding-right: 3px;
     }
 }
