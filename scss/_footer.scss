@@ -27,13 +27,17 @@
     }
     
     .contienecarro {
-        width: 8%;
+        width: 10%;
         span {
-            color: cornsilk;
+            color: rgb(245, 242, 233);
+            border-radius: 50px;
+            background-color: #f71b13;
+            padding: 0px 9px;
+            margin-left: 10%;
         }
         img {
             width: 40%;
-            margin-right: 40%;
+            margin-right: 15%;
         }
     }
     
