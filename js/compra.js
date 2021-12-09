@@ -276,9 +276,6 @@ function eliminarProducto(indicee, cant) {
     mostrarCarro(carro, contenedorCarro)
 }
 
-
-
-
 function pagarCarro() {
     Swal.fire({
         title: 'Confirmar Pago de productos',
