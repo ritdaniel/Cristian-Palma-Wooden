@@ -48,7 +48,7 @@ function mostrarCarro(maceteros, contenedor) {
 
                 const categoria = document.createElement('h6');
                 categoria.setAttribute('class', 'fontCategoria');
-                categoria.innerHTML = `${productoCarro.categoria}`;
+                categoria.innerHTML = `${productoCarro.NombCategoria}`;
                 contenidoInfo.appendChild(categoria);
 
                 const nombre = document.createElement('h6');
@@ -63,7 +63,7 @@ function mostrarCarro(maceteros, contenedor) {
 
                 const carroid = document.createElement('h6');
                 carroid.setAttribute('class', 'fontcarroid');
-                carroid.innerHTML = `Código: ${productoCarro.id}`;
+                carroid.innerHTML = `Código: ${productoCarro.codigo}`;
                 contenidoInfo.appendChild(carroid);
 
                 mostrandoCarro.appendChild(contenidoInfo);
@@ -73,7 +73,7 @@ function mostrarCarro(maceteros, contenedor) {
 
                 const restarcant = document.createElement('button');
                 restarcant.setAttribute('class', 'restar');
-                restarcant.setAttribute('id', `resta${productoCarro.id}`);
+                restarcant.setAttribute('id', `resta${productoCarro.indice}`);
                 // desabilita el boton restar cuando la cantidad es 1
                 if (productoCarro.cantidad == 1) {
                     restarcant.setAttribute("disabled", true);
@@ -90,13 +90,13 @@ function mostrarCarro(maceteros, contenedor) {
 
                 const sumarcant = document.createElement('button');
                 sumarcant.setAttribute('class', 'sumar');
-                sumarcant.setAttribute('id', `suma${productoCarro.id}`);
+                sumarcant.setAttribute('id', `suma${productoCarro.indice}`);
                 sumarcant.innerHTML = `&nbsp + &nbsp <br>`;
                 contenidoCant.appendChild(sumarcant);
 
                 const eliminarprod = document.createElement('button');
                 eliminarprod.setAttribute('class', 'btn btn-danger');
-                eliminarprod.setAttribute('id', `elimina${productoCarro.id}`);
+                eliminarprod.setAttribute('id', `elimina${productoCarro.indice}`);
                 eliminarprod.innerHTML = `Eliminar`;
                 contenidoCant.appendChild(eliminarprod);
 
@@ -124,14 +124,14 @@ function mostrarCarro(maceteros, contenedor) {
                 mostrandoCarro.appendChild(contenidoTotal);
                 contenedor.appendChild(mostrandoCarro);
 
-                document.getElementById(`suma${productoCarro.id}`).addEventListener('click', () => {
-                    sumarcantidad(`${productoCarro.id}`);
+                document.getElementById(`suma${productoCarro.indice}`).addEventListener('click', () => {
+                    sumarcantidad(`${productoCarro.indice}`);
                 });
 
-                document.getElementById(`resta${productoCarro.id}`).addEventListener('click', () => {
-                    restarcantidad(`${productoCarro.id}`);
+                document.getElementById(`resta${productoCarro.indice}`).addEventListener('click', () => {
+                    restarcantidad(`${productoCarro.indice}`);
                 });
-                document.getElementById(`elimina${productoCarro.id}`).addEventListener('click', () => {
+                document.getElementById(`elimina${productoCarro.indice}`).addEventListener('click', () => {
                     eliminarProducto(`${productoCarro.indice}`);
                 });
             }
@@ -176,13 +176,6 @@ function mostrarCarro(maceteros, contenedor) {
     const montoCompra = document.createElement('h4');
     montoCompra.innerText = `Total a pagar $ ${totalAPagar}.-`;
     datoscompra.appendChild(montoCompra);
-
-
-
-
-
-
-
 
 
     //=============  Crea el boton comprar  
@@ -253,7 +246,7 @@ function vaciarCarro() {
 
 
 function sumarcantidad(indices) {
-    const productoEncontrado = carro.find(producto => producto.id === parseInt(indices));
+    const productoEncontrado = carro.find(producto => producto.indice === parseInt(indices));
     productoEncontrado.cantidad++;
     productoEncontrado.total = productoEncontrado.cantidad * productoEncontrado.precio;
     localStorage.setItem('carro', JSON.stringify(carro));
@@ -263,7 +256,7 @@ function sumarcantidad(indices) {
 
 
 function restarcantidad(indicer) {
-    const restarProducto = carro.find(producto => producto.id === parseInt(indicer));
+    const restarProducto = carro.find(producto => producto.indice === parseInt(indicer));
     restarProducto.cantidad--;
     restarProducto.total = restarProducto.cantidad * restarProducto.precio;
     localStorage.setItem('carro', JSON.stringify(carro));
@@ -273,11 +266,7 @@ function restarcantidad(indicer) {
 
 
 function eliminarProducto(indicee) {
-    const eliminarproducto = carro.find(producto => producto.id === parseInt(indicee));
-    Swal.fire({
-        title: 'Producto eliminado',
-        text: `Se ha eliminado producto del carro.-`,
-    });
+    const eliminarproducto = carro.find(producto => producto.indice === parseInt(indicee));
     var otro = carro.splice(indicee, 1);
     localStorage.setItem('carro', JSON.stringify(carro));
     mostrarCarro(carro, contenedorCarro)
