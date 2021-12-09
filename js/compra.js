@@ -6,17 +6,19 @@ let stock = 0;
 let totalAPagar;
 let buscado;
 
-
 //=================  recuperamos del storage el carro de compras guardado siempre que tenga informacion
 if (localStorage.getItem('carro')) {
     carro = JSON.parse(localStorage.getItem('carro'));
 }
+
 
 //================ comstruimos el elemento para mostrar en el HTML
 const contenedorCarro = document.getElementById('listado');
 
 ////================ creamos la funcion para mostrar El carro que recibe el carro [] y el elemento
 function mostrarCarro(maceteros, contenedor) {
+
+    let estotal = maceteros.length;
     contenedor = document.getElementById("listado");
     while (contenedor.firstChild) {
         contenedor.removeChild(contenedor.firstChild);
@@ -132,7 +134,7 @@ function mostrarCarro(maceteros, contenedor) {
                     restarcantidad(`${productoCarro.indice}`);
                 });
                 document.getElementById(`elimina${productoCarro.indice}`).addEventListener('click', () => {
-                    eliminarProducto(`${productoCarro.indice}`);
+                    eliminarProducto(`${productoCarro.indice}`, estotal);
                 });
             }
         });
@@ -265,12 +267,15 @@ function restarcantidad(indicer) {
 
 
 
-function eliminarProducto(indicee) {
+function eliminarProducto(indicee, cant) {
+    if (cant == 1) vaciarCarro();
+
     const eliminarproducto = carro.find(producto => producto.indice === parseInt(indicee));
     var otro = carro.splice(indicee, 1);
     localStorage.setItem('carro', JSON.stringify(carro));
     mostrarCarro(carro, contenedorCarro)
 }
+
 
 
 
